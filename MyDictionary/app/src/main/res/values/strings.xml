@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Dictionary</string>
+    <string name="thesaurus">Thesaurus</string>
+    <string name="description">Find synonyms, antonyms, and related words</string>
+    <string name="search_hint">Search by word</string>
+    <string name="word">Onion</string>
+    <string name="phonetics">[uhn-yuhn]</string>
+    <string name="search_by_word">Search by word</string>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/bg"
+    android:padding="27dp">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:src="@drawable/logo"
+        android:layout_marginTop="45dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/thesaurus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:text="@string/thesaurus"
+        android:fontFamily="@font/medium"
+        android:textSize="35sp"
+        android:layout_below="@+id/logo"/>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/description"
+        android:textColor="#5E5C5C"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:fontFamily="@font/light"
+        android:layout_below="@+id/thesaurus"/>
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/search_bar"
+            android:layout_above="@+id/search_button"
+            android:layout_below="@+id/description"
+            android:layout_marginTop="19dp"
+            android:layout_marginBottom="179dp"
+            android:padding="3dp"
+            android:queryHint="@string/search_by_word"
+            app:iconifiedByDefault="false">
+
+        </androidx.appcompat.widget.SearchView>
+
+
+    <ImageView
+        android:id="@+id/search_button"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/search_button" />
+
+</RelativeLayout>

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Calculator</string>
     <string name="background_image">Background Image</string>
-    <string name="formula">""</string>
+    <string name="formula"> </string>
     <string name="equal">=</string>
     <string name="dot">.</string>
     <string name="zero">0</string>
@@ -23,4 +23,8 @@
     <string name="closingBracket">)</string>
     <string name="c">C</string>
     <string name="result">0</string>
+    <string name="history">History</string>
+    <string name="scientific">s/c</string>
+    <string name="percentage">%</string>
+    <string name="backspace">D</string>
 </resources>

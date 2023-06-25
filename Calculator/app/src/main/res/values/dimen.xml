@@ -2,7 +2,7 @@
 <resources>
     <dimen name="layoutPadding">10dp</dimen>
     <dimen name="keypadPadding">5dp</dimen>
-    <dimen name="textViewHeight">125dp</dimen>
+    <dimen name="textViewHeight">100dp</dimen>
     <dimen name="textPadding">20dp</dimen>
     <dimen name="formulaPadding">20sp</dimen>
     <dimen name="formulaTextSize">30sp</dimen>

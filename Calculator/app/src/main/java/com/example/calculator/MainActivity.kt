@@ -1,13 +1,15 @@
 package com.example.calculator
 
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.widget.Button
+
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton
 import io.alterac.blurkit.BlurLayout
 import org.mariuszgromada.math.mxparser.Expression
 import java.text.DecimalFormat
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -36,6 +38,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnEight: Button
     private lateinit var btnNine: Button
     private lateinit var btnPoint: Button
+    private lateinit var btnC: Button
+    private lateinit var btnHistory: Button
+    private lateinit var btnScientific: Button
+    private lateinit var btnPercentage: Button
+    private lateinit var btnBackspace: Button
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,19 +74,28 @@ class MainActivity : AppCompatActivity() {
         btnEqual = findViewById(R.id.btnEqual)
         btnOpeningBracket = findViewById(R.id.btnOpeningBracket)
         btnClosingBracket = findViewById(R.id.btnClosingBracket)
+        btnC = findViewById(R.id.btnC)
+        btnHistory = findViewById(R.id.btnHistory)
+        btnScientific = findViewById(R.id.btnScientific)
+        btnPercentage = findViewById(R.id.btnPercentage)
+        btnBackspace = findViewById(R.id.btnBackspace)
 
 
 
-        btnOpeningBracket = findViewById(R.id.btnOpeningBracket)
+        output.movementMethod = ScrollingMovementMethod()
+        output.isActivated = true
+        output.isPressed = true
+
+
+        var str:String
+
+
 
         btnOpeningBracket.setOnClickListener {
             formula.text = addToInputText("(")
         }
         btnClosingBracket.setOnClickListener {
             formula.text = addToInputText(")")
-        }
-        btnOpeningBracket.setOnClickListener {
-            formula.text = addToInputText("(")
         }
         btnOne.setOnClickListener {
             formula.text = addToInputText("1")
@@ -125,9 +142,35 @@ class MainActivity : AppCompatActivity() {
         btnDivide.setOnClickListener {
             formula.text = addToInputText("/")
         }
-        btnEqual.setOnClickListener {
-            formula.text = addToInputText("")
-            output.text = addToInputText("")
+        btnHistory.setOnClickListener {
+
+        }
+        btnScientific.setOnClickListener {
+
+        }
+        btnPercentage.setOnClickListener {
+
+            formula.text = addToInputText("%")
+
+//            if(formula.text.toString().endsWith("%")||formula.text.toString().endsWith("/")||formula.text.toString().endsWith("*")||formula.text.toString().endsWith("+")||formula.text.toString().endsWith("-")||formula.text.toString().endsWith(".")){
+//                str = formula.text.toString()
+//                expressionText(str)
+//            }else   {
+//                str = formula.text.toString() + "%"
+//                expressionText(str)
+//            }
+        }
+        btnBackspace.setOnClickListener {
+            if (formula.text.toString().isNotEmpty()){
+                val lastIndex = formula.text.toString().lastIndex
+                str = formula.text.toString().substring(0,lastIndex)
+                expressionText(str)
+                showResult()
+            }
+        }
+        btnC.setOnClickListener {
+            formula.text = ""
+            output.text = "0"
         }
         btnEqual.setOnClickListener {
             showResult()
@@ -144,6 +187,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun getInputExpression(): String {
         return formula.text.replace(Regex("X"), "*")
+    }
+
+
+    private fun expressionText(str:String){
+        formula.text = str
     }
 
     private fun showResult() {

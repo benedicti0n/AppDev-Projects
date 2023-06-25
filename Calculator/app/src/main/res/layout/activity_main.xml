@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/background_image" />
+
+    <io.alterac.blurkit.BlurLayout
+        android:id="@+id/blurLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:blk_downscaleFactor="0.75"
+        app:blk_blurRadius="10"
+        app:blk_fps="0"/>
+
+
+        <LinearLayout
+            android:id="@+id/display"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:orientation="vertical"
+            android:padding="@dimen/layoutPadding">
+
+
+            <TextView
+                android:id="@+id/formula"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/textViewHeight"
+                android:gravity="end|center"
+                android:padding="@dimen/textPadding"
+                android:textSize="@dimen/formulaTextSize"
+                android:text="@string/formula"
+                android:fontFamily="@font/kanitlight" />
+
+            <TextView
+                android:id="@+id/output"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/textViewHeight"
+                android:gravity="end|center"
+                android:textSize="@dimen/resultTextSize"
+                android:padding="@dimen/textPadding"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/result" />
+        </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:layout_below="@+id/display">
+
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/c"
+                android:textSize="25sp"
+                tools:ignore="NestedWeights,TextContrastCheck" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnOpeningBracket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/openingBracket"
+                android:textSize="25sp"
+                tools:ignore="TextContrastCheck" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnClosingBracket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/closingBracket"
+                android:textSize="25sp"
+                tools:ignore="TextContrastCheck" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDivide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/divide"
+                android:textSize="25sp"
+                tools:ignore="TextContrastCheck" />
+
+        
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/keypadPadding"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSeven"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/seven"
+                android:textSize="25sp"
+                tools:ignore="NestedWeights,TextContrastCheck" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnEight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/eight"
+                android:textSize="25sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnNine"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/nine"
+                android:textSize="25sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMultiply"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/multiply"
+                android:textSize="25sp"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/keypadPadding"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnFour"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/four"
+                android:textSize="25sp"
+                tools:ignore="NestedWeights,TextContrastCheck,VisualLintButtonSize" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnFive"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/five"
+                android:textSize="25sp"
+                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSix"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/six"
+                android:textSize="25sp"
+                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMinus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/minus"
+                android:textSize="25sp"
+                tools:ignore="VisualLintButtonSize,TextContrastCheck" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/keypadPadding"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnOne"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/one"
+                android:textSize="25sp"
+                tools:ignore="NestedWeights,TextContrastCheck,VisualLintButtonSize" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnTwo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/two"
+                android:textSize="25sp"
+                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnThree"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/three"
+                android:textSize="25sp"
+                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnPlus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/plus"
+                android:textSize="25sp"
+                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/keypadPadding"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDoubleZero"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/doubleZero"
+                android:textSize="25sp"
+                tools:ignore="NestedWeights,TextContrastCheck,VisualLintButtonSize" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnZero"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/zero"
+                android:textSize="25sp"
+                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnPoint"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/dot"
+                android:textSize="25sp"
+                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnEqual"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/equal"
+                android:textSize="25sp"
+                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

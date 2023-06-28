@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bg1"
+        android:title="@string/bg_1"/>
+    <item
+        android:id="@+id/bg2"
+        android:title="@string/bg_2"/>
+    <item
+        android:id="@+id/bg3"
+        android:title="@string/bg_3"/>
+    <item
+        android:id="@+id/bg4"
+        android:title="@string/bg_4"/>
+</menu>

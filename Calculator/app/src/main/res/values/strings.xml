@@ -27,4 +27,8 @@
     <string name="scientific">s/c</string>
     <string name="percentage">%</string>
     <string name="backspace">D</string>
+    <string name="bg_1">Bg 1</string>
+    <string name="bg_2">Bg 2</string>
+    <string name="bg_3">Bg 3</string>
+    <string name="bg_4">Bg 4</string>
 </resources>

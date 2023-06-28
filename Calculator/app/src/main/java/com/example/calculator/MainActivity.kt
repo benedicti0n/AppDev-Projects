@@ -2,10 +2,14 @@ package com.example.calculator
 
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
+import android.view.ContextMenu
+import android.view.MenuItem
+import android.view.View
 import android.widget.Button
-
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import io.alterac.blurkit.BlurLayout
 import org.mariuszgromada.math.mxparser.Expression
 import java.text.DecimalFormat
@@ -43,14 +47,20 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnScientific: Button
     private lateinit var btnPercentage: Button
     private lateinit var btnBackspace: Button
-
+    private lateinit var btnPopup: FloatingActionButton
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
+
+
         blurLayout = findViewById(R.id.blurLayout)
+
+        btnPopup = findViewById(R.id.btnPopup)
 
         formula = findViewById(R.id.formula)
         output = findViewById(R.id.output)
@@ -88,6 +98,10 @@ class MainActivity : AppCompatActivity() {
 
 
         var str:String
+
+
+
+        registerForContextMenu(btnPopup)
 
 
 
@@ -227,5 +241,27 @@ class MainActivity : AppCompatActivity() {
         blurLayout.pauseBlur()
         super.onStop()
     }
+
+    override fun onCreateContextMenu(
+        menu: ContextMenu?,
+        v: View?,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        menuInflater.inflate(R.menu.example_menu, menu)
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId){
+            R.id.bg1 -> Toast.makeText(this, "Bg1", Toast.LENGTH_SHORT).show()
+            R.id.bg2 -> Toast.makeText(this, "Bg2", Toast.LENGTH_SHORT).show()
+            R.id.bg3 -> Toast.makeText(this, "Bg3", Toast.LENGTH_SHORT).show()
+            R.id.bg4 -> Toast.makeText(this, "Bg4", Toast.LENGTH_SHORT).show()
+        }
+
+        return super.onContextItemSelected(item)
+    }
+
 
 }

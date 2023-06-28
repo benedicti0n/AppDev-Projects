@@ -6,9 +6,10 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
-import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import io.alterac.blurkit.BlurKit
 import io.alterac.blurkit.BlurLayout
 import org.mariuszgromada.math.mxparser.Expression
 import java.text.DecimalFormat
@@ -17,7 +18,12 @@ import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var blurLayout: BlurLayout
+//    private lateinit var blurLayout: BlurLayout
+
+    //for set the custom background
+    private val contract = registerForActivityResult(ActivityResultContracts.GetContent()){
+        backgroundImage.setImageURI(it)
+    }
 
     private lateinit var formula: TextView
     private lateinit var output: TextView
@@ -57,7 +63,9 @@ class MainActivity : AppCompatActivity() {
 
         backgroundImage = findViewById(R.id.backgroundImage)
 
-        blurLayout = findViewById(R.id.blurLayout)
+
+//        blurLayout = findViewById(R.id.blurLayout)
+        BlurKit.init(this)
 
         btnPopup = findViewById(R.id.btnPopup)
 
@@ -198,10 +206,7 @@ class MainActivity : AppCompatActivity() {
                 when (menuItem.itemId) {
                     R.id.bg1 -> {
 
-                        Toast.makeText(this, "its working", Toast.LENGTH_SHORT).show()
-                        backgroundImage.setImageResource(R.drawable.bg1)
-
-
+                        backgroundImage.setImageResource(R.drawable.bg4)
                         true
                     }
                     R.id.bg2 -> {
@@ -216,6 +221,9 @@ class MainActivity : AppCompatActivity() {
                         true
                     }
                     R.id.bg4 -> {
+                        //Custom image pick
+
+                        contract.launch("image/*")
 
                         true
                     }
@@ -227,6 +235,11 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+
+    //Blurring the background
+
+
 
 
     private fun addToInputText(buttonValue: String): String{
@@ -264,18 +277,21 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+    
+    
 
 
+//
+//    override fun onStart() {
+//        super.onStart()
+//        blurLayout.startBlur()
+//    }
+//
+//    override fun onStop() {
+//        blurLayout.pauseBlur()
+//        super.onStop()
+//    }
 
-    override fun onStart() {
-        super.onStart()
-        blurLayout.startBlur()
-    }
-
-    override fun onStop() {
-        blurLayout.pauseBlur()
-        super.onStop()
-    }
 
 
 }

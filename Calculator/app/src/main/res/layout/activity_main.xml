@@ -6,34 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <io.alterac.blurkit.BlurLayout
-        android:id="@+id/blurLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:blk_downscaleFactor="0.75"
-        app:blk_blurRadius="10"
-        app:blk_fps="0"/>
+
 
     <ImageView
-        android:id="@+id/backgroundImage"
-        android:src="@drawable/bg1"
-        android:scaleType="centerCrop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="@string/background_image" />
+        android:src="@drawable/bg4"
+        android:id="@+id/backgroundImage"
+        android:scaleType="centerCrop"
+        tools:ignore="ContentDescription" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnPopup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:elevation="0dp"
-        android:src="@drawable/dot"
-        app:backgroundTint="@android:color/transparent"
-        app:elevation="0dp"
-        tools:ignore="ContentDescription,RelativeOverlap,SpeakableTextPresentCheck" />
 
+
+
+<!--    <io.alterac.blurkit.BlurLayout-->
+<!--        android:id="@+id/blurLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:blk_downscaleFactor="0.35"-->
+<!--        app:blk_blurRadius="19"-->
+<!--        app:blk_fps="0">-->
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnPopup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:elevation="0dp"
+            android:src="@drawable/dot"
+            app:backgroundTint="@android:color/transparent"
+            app:elevation="0dp"
+            tools:ignore="ContentDescription,RelativeOverlap,SpeakableTextPresentCheck" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/display"
@@ -69,348 +78,353 @@
                 android:text="@string/result" />
         </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_below="@+id/display">
-
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/keypadPadding"
-            android:layout_weight="1">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
 
-            <Button
-                android:id="@+id/btnHistory"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.5"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/history"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="NestedWeights,TextContrastCheck" />
 
-            <Button
-                android:id="@+id/btnScientific"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/scientific"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="TextContrastCheck" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/keypadPadding"
+                android:layout_weight="1">
 
-            <Button
-                android:id="@+id/btnPercentage"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/percentage"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="TextContrastCheck" />
+                <Button
+                    android:id="@+id/btnHistory"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/history"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="NestedWeights,TextContrastCheck" />
 
-            <Button
-                android:id="@+id/btnBackspace"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/backspace"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="TextContrastCheck" />
+                <Button
+                    android:id="@+id/btnScientific"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/scientific"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="TextContrastCheck" />
 
+                <Button
+                    android:id="@+id/btnPercentage"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/percentage"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="TextContrastCheck" />
+
+                <Button
+                    android:id="@+id/btnBackspace"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/backspace"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="TextContrastCheck" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/keypadPadding"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btnC"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/c"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="NestedWeights,TextContrastCheck" />
+
+                <Button
+                    android:id="@+id/btnOpeningBracket"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/openingBracket"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="TextContrastCheck" />
+
+                <Button
+                    android:id="@+id/btnClosingBracket"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/closingBracket"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="TextContrastCheck" />
+
+                <Button
+                    android:id="@+id/btnDivide"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/divide"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="TextContrastCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/keypadPadding"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btnSeven"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/seven"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="NestedWeights,TextContrastCheck" />
+
+                <Button
+                    android:id="@+id/btnEight"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/eight"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize" />
+
+                <Button
+                    android:id="@+id/btnNine"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/nine"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize" />
+
+                <Button
+                    android:id="@+id/btnMultiply"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/multiply"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/keypadPadding"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btnFour"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/four"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="NestedWeights,TextContrastCheck,VisualLintButtonSize" />
+
+                <Button
+                    android:id="@+id/btnFive"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/five"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+                <Button
+                    android:id="@+id/btnSix"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/six"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+                <Button
+                    android:id="@+id/btnMinus"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/minus"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="VisualLintButtonSize,TextContrastCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/keypadPadding"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btnOne"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/one"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="NestedWeights,TextContrastCheck,VisualLintButtonSize" />
+
+                <Button
+                    android:id="@+id/btnTwo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/two"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+                <Button
+                    android:id="@+id/btnThree"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/three"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+                <Button
+                    android:id="@+id/btnPlus"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/plus"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/keypadPadding"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btnDoubleZero"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/doubleZero"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="NestedWeights,TextContrastCheck,VisualLintButtonSize" />
+
+                <Button
+                    android:id="@+id/btnZero"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/zero"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize" />
+
+                <Button
+                    android:id="@+id/btnPoint"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/dot"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+                <Button
+                    android:id="@+id/btnEqual"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/kanitlight"
+                    android:text="@string/equal"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+            </LinearLayout>
         </LinearLayout>
+</LinearLayout>
+
+<!--    </io.alterac.blurkit.BlurLayout>-->
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/keypadPadding"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/btnC"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/c"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="NestedWeights,TextContrastCheck" />
-
-            <Button
-                android:id="@+id/btnOpeningBracket"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/openingBracket"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="TextContrastCheck" />
-
-            <Button
-                android:id="@+id/btnClosingBracket"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/closingBracket"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="TextContrastCheck" />
-
-            <Button
-                android:id="@+id/btnDivide"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/divide"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="TextContrastCheck" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/keypadPadding"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/btnSeven"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/seven"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="NestedWeights,TextContrastCheck" />
-
-            <Button
-                android:id="@+id/btnEight"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/eight"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize" />
-
-            <Button
-                android:id="@+id/btnNine"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/nine"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize" />
-
-            <Button
-                android:id="@+id/btnMultiply"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/multiply"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/keypadPadding"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/btnFour"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/four"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="NestedWeights,TextContrastCheck,VisualLintButtonSize" />
-
-            <Button
-                android:id="@+id/btnFive"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/five"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
-
-            <Button
-                android:id="@+id/btnSix"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/six"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
-
-            <Button
-                android:id="@+id/btnMinus"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/minus"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="VisualLintButtonSize,TextContrastCheck" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/keypadPadding"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/btnOne"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/one"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="NestedWeights,TextContrastCheck,VisualLintButtonSize" />
-
-            <Button
-                android:id="@+id/btnTwo"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/two"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
-
-            <Button
-                android:id="@+id/btnThree"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/three"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
-
-            <Button
-                android:id="@+id/btnPlus"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/plus"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/keypadPadding"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/btnDoubleZero"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/doubleZero"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="NestedWeights,TextContrastCheck,VisualLintButtonSize" />
-
-            <Button
-                android:id="@+id/btnZero"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/zero"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize" />
-
-            <Button
-                android:id="@+id/btnPoint"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/dot"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
-
-            <Button
-                android:id="@+id/btnEqual"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/equal"
-                android:textColor="@color/white"
-                android:textSize="@dimen/buttonTextSize"
-                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
-
-        </LinearLayout>
-    </LinearLayout>
 
 </RelativeLayout>

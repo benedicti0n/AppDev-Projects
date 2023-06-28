@@ -2,10 +2,9 @@ package com.example.calculator
 
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
-import android.view.ContextMenu
-import android.view.MenuItem
-import android.view.View
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -48,6 +47,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnPercentage: Button
     private lateinit var btnBackspace: Button
     private lateinit var btnPopup: FloatingActionButton
+    private lateinit var  backgroundImage:ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,8 +55,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-
-
+        backgroundImage = findViewById(R.id.backgroundImage)
 
         blurLayout = findViewById(R.id.blurLayout)
 
@@ -100,8 +99,6 @@ class MainActivity : AppCompatActivity() {
         var str:String
 
 
-
-        registerForContextMenu(btnPopup)
 
 
 
@@ -191,6 +188,44 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        //Popup Menu
+
+        btnPopup.setOnClickListener {
+            val popupMenu = PopupMenu(this, btnPopup)
+            popupMenu.menuInflater.inflate(R.menu.example_menu, popupMenu.menu)
+            popupMenu.setOnMenuItemClickListener { menuItem ->
+                // Handle menu item click events here
+                when (menuItem.itemId) {
+                    R.id.bg1 -> {
+
+                        Toast.makeText(this, "its working", Toast.LENGTH_SHORT).show()
+                        backgroundImage.setImageResource(R.drawable.bg1)
+
+
+                        true
+                    }
+                    R.id.bg2 -> {
+
+                        backgroundImage.setImageResource(R.drawable.bg2)
+                        true
+                    }
+                    // Add cases for other menu items as needed
+                    R.id.bg3 -> {
+
+                        backgroundImage.setImageResource(R.drawable.bg3)
+                        true
+                    }
+                    R.id.bg4 -> {
+
+                        true
+                    }
+                    else -> false
+                }
+            }
+            popupMenu.show()
+        }
+
+
     }
 
 
@@ -216,16 +251,16 @@ class MainActivity : AppCompatActivity() {
             if (result.isNaN()){
                 //show error message
                 output.text = "Error"
-//                output.setTextColor(ContextCompat.getColor(this, R.color.red))
+//
             }else{
                 //show Result
                 output.text = DecimalFormat("0.######").format(result).toString()
-//                output.setTextColor(ContextCompat.getColor(this, R.color.green))
+//
             }
         }catch (_: Exception){
             //show error message
             output.text = "Error"
-//                output.setTextColor(ContextCompat.getColor(this, R.color.red))
+//
         }
 
     }
@@ -240,27 +275,6 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         blurLayout.pauseBlur()
         super.onStop()
-    }
-
-    override fun onCreateContextMenu(
-        menu: ContextMenu?,
-        v: View?,
-        menuInfo: ContextMenu.ContextMenuInfo?
-    ) {
-        super.onCreateContextMenu(menu, v, menuInfo)
-        menuInflater.inflate(R.menu.example_menu, menu)
-    }
-
-    override fun onContextItemSelected(item: MenuItem): Boolean {
-
-        when(item.itemId){
-            R.id.bg1 -> Toast.makeText(this, "Bg1", Toast.LENGTH_SHORT).show()
-            R.id.bg2 -> Toast.makeText(this, "Bg2", Toast.LENGTH_SHORT).show()
-            R.id.bg3 -> Toast.makeText(this, "Bg3", Toast.LENGTH_SHORT).show()
-            R.id.bg4 -> Toast.makeText(this, "Bg4", Toast.LENGTH_SHORT).show()
-        }
-
-        return super.onContextItemSelected(item)
     }
 
 

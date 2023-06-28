@@ -6,14 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/bg1"
-        android:scaleType="centerCrop"
-        android:contentDescription="@string/background_image" />
-
     <io.alterac.blurkit.BlurLayout
         android:id="@+id/blurLayout"
         android:layout_width="match_parent"
@@ -22,17 +14,25 @@
         app:blk_blurRadius="10"
         app:blk_fps="0"/>
 
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:src="@drawable/bg1"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/background_image" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnPopup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
         android:elevation="0dp"
         android:src="@drawable/dot"
         app:backgroundTint="@android:color/transparent"
         app:elevation="0dp"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="ContentDescription,RelativeOverlap,SpeakableTextPresentCheck" />
 
 
         <LinearLayout
@@ -103,7 +103,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/scientific"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="@dimen/buttonTextSize"
                 tools:ignore="TextContrastCheck" />
 
             <Button
@@ -160,7 +160,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/openingBracket"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="@dimen/buttonTextSize"
                 tools:ignore="TextContrastCheck" />
 
             <Button
@@ -204,7 +204,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/seven"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="@dimen/buttonTextSize"
                 tools:ignore="NestedWeights,TextContrastCheck" />
 
             <Button
@@ -216,7 +216,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/eight"
                 android:textColor="@color/white"
-                android:textSize="25sp" />
+                android:textSize="@dimen/buttonTextSize" />
 
             <Button
                 android:id="@+id/btnNine"
@@ -227,7 +227,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/nine"
                 android:textColor="@color/white"
-                android:textSize="25sp" />
+                android:textSize="@dimen/buttonTextSize" />
 
             <Button
                 android:id="@+id/btnMultiply"
@@ -238,7 +238,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/multiply"
                 android:textColor="@color/white"
-                android:textSize="25sp"/>
+                android:textSize="@dimen/buttonTextSize"/>
 
         </LinearLayout>
 
@@ -258,7 +258,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/four"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="@dimen/buttonTextSize"
                 tools:ignore="NestedWeights,TextContrastCheck,VisualLintButtonSize" />
 
             <Button
@@ -270,7 +270,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/five"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="@dimen/buttonTextSize"
                 tools:ignore="TextContrastCheck,VisualLintButtonSize" />
 
             <Button
@@ -282,7 +282,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/six"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="@dimen/buttonTextSize"
                 tools:ignore="TextContrastCheck,VisualLintButtonSize" />
 
             <Button
@@ -294,7 +294,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/minus"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="@dimen/buttonTextSize"
                 tools:ignore="VisualLintButtonSize,TextContrastCheck" />
 
         </LinearLayout>
@@ -315,7 +315,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/one"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="@dimen/buttonTextSize"
                 tools:ignore="NestedWeights,TextContrastCheck,VisualLintButtonSize" />
 
             <Button
@@ -327,7 +327,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/two"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="@dimen/buttonTextSize"
                 tools:ignore="TextContrastCheck,VisualLintButtonSize" />
 
             <Button
@@ -339,7 +339,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/three"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="@dimen/buttonTextSize"
                 tools:ignore="TextContrastCheck,VisualLintButtonSize" />
 
             <Button
@@ -351,7 +351,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/plus"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="@dimen/buttonTextSize"
                 tools:ignore="TextContrastCheck,VisualLintButtonSize" />
 
         </LinearLayout>
@@ -372,7 +372,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/doubleZero"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="@dimen/buttonTextSize"
                 tools:ignore="NestedWeights,TextContrastCheck,VisualLintButtonSize" />
 
             <Button
@@ -384,7 +384,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/zero"
                 android:textColor="@color/white"
-                android:textSize="25sp" />
+                android:textSize="@dimen/buttonTextSize" />
 
             <Button
                 android:id="@+id/btnPoint"
@@ -395,7 +395,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/dot"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="@dimen/buttonTextSize"
                 tools:ignore="TextContrastCheck,VisualLintButtonSize" />
 
             <Button
@@ -407,7 +407,7 @@
                 android:fontFamily="@font/kanitlight"
                 android:text="@string/equal"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="@dimen/buttonTextSize"
                 tools:ignore="TextContrastCheck,VisualLintButtonSize" />
 
         </LinearLayout>

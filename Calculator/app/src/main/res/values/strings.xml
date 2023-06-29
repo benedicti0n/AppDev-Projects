@@ -10,11 +10,11 @@
     <string name="three">3</string>
     <string name="two">2</string>
     <string name="one">1</string>
-    <string name="minus">-</string>
+    <string name="minus">−</string>
     <string name="six">6</string>
     <string name="five">5</string>
     <string name="four">4</string>
-    <string name="multiply">X</string>
+    <string name="multiply">×</string>
     <string name="nine">9</string>
     <string name="eight">8</string>
     <string name="seven">7</string>
@@ -26,7 +26,7 @@
     <string name="history">History</string>
     <string name="scientific">s/c</string>
     <string name="percentage">%</string>
-    <string name="backspace">D</string>
+    <string name="backspace">Del</string>
     <string name="bg_1">Bg 1</string>
     <string name="bg_2">Bg 2</string>
     <string name="bg_3">Bg 3</string>

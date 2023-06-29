@@ -7,16 +7,18 @@
     tools:context=".MainActivity">
 
 
-
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/bg4"
+        android:src="@drawable/bg1"
         android:id="@+id/backgroundImage"
         android:scaleType="centerCrop"
         tools:ignore="ContentDescription" />
 
-
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@drawable/blurlayout">-->
 
 
 <!--    <io.alterac.blurkit.BlurLayout-->
@@ -39,50 +41,54 @@
             app:elevation="0dp"
             tools:ignore="ContentDescription,RelativeOverlap,SpeakableTextPresentCheck" />
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<!--<LinearLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical">-->
 
-        <LinearLayout
-            android:id="@+id/display"
+    <LinearLayout
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_above="@+id/keypad"
+        android:layout_marginBottom="0dp"
+        android:orientation="vertical"
+        android:padding="@dimen/layoutPadding">
+
+
+        <TextView
+            android:id="@+id/formula"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:orientation="vertical"
-            android:padding="@dimen/layoutPadding">
+            android:layout_height="@dimen/textViewHeight"
+            android:fontFamily="@font/kanitlight"
+            android:gravity="end|center"
+            android:padding="@dimen/textPadding"
+            android:scrollHorizontally="true"
+            android:text="@string/formula"
+            android:textColor="@color/black"
+            android:textSize="@dimen/formulaTextSize"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-
-            <TextView
-                android:id="@+id/formula"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/textViewHeight"
-                android:fontFamily="@font/kanitlight"
-                android:gravity="end|center"
-                android:scrollHorizontally="true"
-                android:padding="@dimen/textPadding"
-                android:text="@string/formula"
-                android:textColor="@color/black"
-                android:textSize="@dimen/formulaTextSize"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <TextView
-                android:id="@+id/output"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/textViewHeight"
-                android:gravity="end|center"
-                android:scrollHorizontally="true"
-                android:textSize="@dimen/resultTextSize"
-                android:textColor="@color/black"
-                android:padding="@dimen/textPadding"
-                android:fontFamily="@font/kanitlight"
-                android:text="@string/result" />
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/output"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="@dimen/textViewHeight"
+            android:fontFamily="@font/kanitlight"
+            android:gravity="end|center"
+            android:padding="@dimen/textPadding"
+            android:scrollHorizontally="true"
+
+            android:text="@string/result"
+            android:textColor="@color/black"
+            android:textSize="@dimen/resultTextSize" />
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/keypad"
+            android:layout_width="match_parent"
+            android:layout_height="430dp"
             android:orientation="vertical"
-            >
+            android:layout_alignParentBottom="true">
 
 
             <LinearLayout
@@ -90,17 +96,21 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/keypadPadding"
                 android:layout_weight="1">
-
                 <Button
                     android:id="@+id/btnHistory"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1.5"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:backgroundTint="#B57979"
+                    android:background="@drawable/gradient"
                     android:fontFamily="@font/kanitlight"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
                     android:text="@string/history"
                     android:textColor="@color/white"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:textSize="@dimen/buttonTextSize"
+                    android:textStyle="bold"
                     tools:ignore="NestedWeights,TextContrastCheck" />
 
                 <Button
@@ -108,11 +118,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
                     android:fontFamily="@font/kanitlight"
                     android:text="@string/scientific"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
                     android:textColor="@color/white"
                     android:textSize="@dimen/buttonTextSize"
+                    android:textStyle="bold"
                     tools:ignore="TextContrastCheck" />
 
                 <Button
@@ -120,10 +134,14 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
                     android:fontFamily="@font/kanitlight"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:text="@string/percentage"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
                     android:textColor="@color/white"
+                    android:textStyle="bold"
                     android:textSize="@dimen/buttonTextSize"
                     tools:ignore="TextContrastCheck" />
 
@@ -132,9 +150,12 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
+                    android:textStyle="bold"
                     android:fontFamily="@font/kanitlight"
                     android:text="@string/backspace"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:textColor="@color/white"
                     android:textSize="@dimen/buttonTextSize"
                     tools:ignore="TextContrastCheck" />
@@ -153,9 +174,13 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/kanitlight"
+                    android:textStyle="bold"
                     android:text="@string/c"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
                     android:textColor="@color/white"
                     android:textSize="@dimen/buttonTextSize"
                     tools:ignore="NestedWeights,TextContrastCheck" />
@@ -165,11 +190,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/kanitlight"
                     android:text="@string/openingBracket"
                     android:textColor="@color/white"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
                     android:textSize="@dimen/buttonTextSize"
+                    android:textStyle="bold"
                     tools:ignore="TextContrastCheck" />
 
                 <Button
@@ -177,9 +206,13 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
                     android:fontFamily="@font/kanitlight"
+                    android:textStyle="bold"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:text="@string/closingBracket"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
                     android:textColor="@color/white"
                     android:textSize="@dimen/buttonTextSize"
                     tools:ignore="TextContrastCheck" />
@@ -189,8 +222,12 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
                     android:fontFamily="@font/kanitlight"
+
+                    android:textStyle="bold"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:text="@string/divide"
                     android:textColor="@color/white"
                     android:textSize="@dimen/buttonTextSize"
@@ -209,10 +246,14 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
                     android:fontFamily="@font/kanitlight"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
                     android:text="@string/seven"
+                    android:textStyle="bold"
                     android:textColor="@color/white"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:textSize="@dimen/buttonTextSize"
                     tools:ignore="NestedWeights,TextContrastCheck" />
 
@@ -221,8 +262,12 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/kanitlight"
+                    android:textStyle="bold"
                     android:text="@string/eight"
                     android:textColor="@color/white"
                     android:textSize="@dimen/buttonTextSize" />
@@ -232,8 +277,12 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
                     android:fontFamily="@font/kanitlight"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:text="@string/nine"
                     android:textColor="@color/white"
                     android:textSize="@dimen/buttonTextSize" />
@@ -243,11 +292,12 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:fontFamily="@font/kanitlight"
+                    android:background="@drawable/gradient"
                     android:text="@string/multiply"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/buttonTextSize"/>
+                    android:textSize="@dimen/buttonTextSize"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"/>
 
             </LinearLayout>
 
@@ -263,8 +313,12 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/kanitlight"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
+                    android:textStyle="bold"
                     android:text="@string/four"
                     android:textColor="@color/white"
                     android:textSize="@dimen/buttonTextSize"
@@ -275,8 +329,12 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/kanitlight"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
                     android:text="@string/five"
                     android:textColor="@color/white"
                     android:textSize="@dimen/buttonTextSize"
@@ -286,10 +344,14 @@
                     android:id="@+id/btnSix"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
+                    android:textStyle="bold"
                     android:fontFamily="@font/kanitlight"
                     android:text="@string/six"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
                     android:textColor="@color/white"
                     android:textSize="@dimen/buttonTextSize"
                     tools:ignore="TextContrastCheck,VisualLintButtonSize" />
@@ -299,10 +361,13 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
                     android:fontFamily="@font/kanitlight"
                     android:text="@string/minus"
+                    android:textStyle="bold"
                     android:textColor="@color/white"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:textSize="@dimen/buttonTextSize"
                     tools:ignore="VisualLintButtonSize,TextContrastCheck" />
 
@@ -315,13 +380,18 @@
                 android:padding="@dimen/keypadPadding"
                 android:layout_weight="1">
 
+
                 <Button
                     android:id="@+id/btnOne"
+                    android:background="@drawable/gradient"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
+                    android:textStyle="bold"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
                     android:fontFamily="@font/kanitlight"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:text="@string/one"
                     android:textColor="@color/white"
                     android:textSize="@dimen/buttonTextSize"
@@ -332,9 +402,13 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
                     android:fontFamily="@font/kanitlight"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
+                    android:textStyle="bold"
                     android:text="@string/two"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:textColor="@color/white"
                     android:textSize="@dimen/buttonTextSize"
                     tools:ignore="TextContrastCheck,VisualLintButtonSize" />
@@ -344,11 +418,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
                     android:fontFamily="@font/kanitlight"
                     android:text="@string/three"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
                     android:textColor="@color/white"
                     android:textSize="@dimen/buttonTextSize"
+                    android:textStyle="bold"
                     tools:ignore="TextContrastCheck,VisualLintButtonSize" />
 
                 <Button
@@ -356,9 +434,10 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:fontFamily="@font/kanitlight"
+                    android:background="@drawable/gradient"
                     android:text="@string/plus"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:textColor="@color/white"
                     android:textSize="@dimen/buttonTextSize"
                     tools:ignore="TextContrastCheck,VisualLintButtonSize" />
@@ -377,10 +456,14 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
                     android:fontFamily="@font/kanitlight"
                     android:text="@string/doubleZero"
                     android:textColor="@color/white"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
+                    android:textStyle="bold"
                     android:textSize="@dimen/buttonTextSize"
                     tools:ignore="NestedWeights,TextContrastCheck,VisualLintButtonSize" />
 
@@ -388,21 +471,29 @@
                     android:id="@+id/btnZero"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:textStyle="bold"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/gradient"
                     android:fontFamily="@font/kanitlight"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:text="@string/zero"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
                     android:textColor="@color/white"
                     android:textSize="@dimen/buttonTextSize" />
 
                 <Button
-                    android:id="@+id/btnPoint"
+                    android:id="@+id/btnDot"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:textStyle="bold"
+                    android:background="@drawable/gradient"
                     android:fontFamily="@font/kanitlight"
+                    android:layout_marginEnd="@dimen/buttonMarginEnd"
                     android:text="@string/dot"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:textColor="@color/white"
                     android:textSize="@dimen/buttonTextSize"
                     tools:ignore="TextContrastCheck,VisualLintButtonSize" />
@@ -412,19 +503,31 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:textStyle="bold"
+                    android:background="@drawable/gradient"
                     android:fontFamily="@font/kanitlight"
                     android:text="@string/equal"
+                    tools:targetApi="o"
+                    android:autoSizeTextType="uniform"
                     android:textColor="@color/white"
                     android:textSize="@dimen/buttonTextSize"
                     tools:ignore="TextContrastCheck,VisualLintButtonSize" />
 
             </LinearLayout>
+
+<!--            <io.alterac.blurkit.BlurLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                app:blk_downscaleFactor="0.35"-->
+<!--                app:blk_blurRadius="19"-->
+<!--                app:blk_fps="0"/>-->
         </LinearLayout>
-</LinearLayout>
+<!--</LinearLayout>-->
+
+<!--        </RelativeLayout>-->
 
 <!--    </io.alterac.blurkit.BlurLayout>-->
 
 
 
-</RelativeLayout>
+    </RelativeLayout>

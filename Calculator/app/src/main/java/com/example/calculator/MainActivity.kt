@@ -9,10 +9,9 @@ import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import io.alterac.blurkit.BlurKit
-import io.alterac.blurkit.BlurLayout
-import org.mariuszgromada.math.mxparser.Expression
-import java.text.DecimalFormat
+import net.objecthunter.exp4j.ExpressionBuilder
+import java.lang.Exception
+
 
 
 
@@ -46,12 +45,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnSeven: Button
     private lateinit var btnEight: Button
     private lateinit var btnNine: Button
-    private lateinit var btnPoint: Button
     private lateinit var btnC: Button
     private lateinit var btnHistory: Button
     private lateinit var btnScientific: Button
     private lateinit var btnPercentage: Button
     private lateinit var btnBackspace: Button
+    private lateinit var btnDot:Button
     private lateinit var btnPopup: FloatingActionButton
     private lateinit var  backgroundImage:ImageView
 
@@ -65,14 +64,13 @@ class MainActivity : AppCompatActivity() {
 
 
 //        blurLayout = findViewById(R.id.blurLayout)
-        BlurKit.init(this)
+//        BlurKit.init(this)
 
         btnPopup = findViewById(R.id.btnPopup)
 
         formula = findViewById(R.id.formula)
         output = findViewById(R.id.output)
 
-        btnPoint = findViewById(R.id.btnPoint)
         btnOne = findViewById(R.id.btnOne)
         btnTwo = findViewById(R.id.btnTwo)
         btnThree = findViewById(R.id.btnThree)
@@ -92,6 +90,7 @@ class MainActivity : AppCompatActivity() {
         btnOpeningBracket = findViewById(R.id.btnOpeningBracket)
         btnClosingBracket = findViewById(R.id.btnClosingBracket)
         btnC = findViewById(R.id.btnC)
+        btnDot = findViewById(R.id.btnDot)
         btnHistory = findViewById(R.id.btnHistory)
         btnScientific = findViewById(R.id.btnScientific)
         btnPercentage = findViewById(R.id.btnPercentage)
@@ -111,55 +110,213 @@ class MainActivity : AppCompatActivity() {
 
 
         btnOpeningBracket.setOnClickListener {
-            formula.text = addToInputText("(")
+//            formula.text = addToInputText("(")
+            if (formula.text.toString().startsWith("0")){
+                str = formula.text.toString().replace("0", "") + "("
+                expressionText(str)
+                showResult()
+            }else{
+                str = formula.text.toString() + "("
+                expressionText(str)
+                showResult()
+            }
         }
         btnClosingBracket.setOnClickListener {
-            formula.text = addToInputText(")")
+//            formula.text = addToInputText(")")
+            if (formula.text.toString().startsWith("0")){
+                str = formula.text.toString().replace("0", "") + ")"
+                expressionText(str)
+                showResult()
+            }else{
+                str = formula.text.toString() + ")"
+                expressionText(str)
+                showResult()
+            }
         }
         btnOne.setOnClickListener {
-            formula.text = addToInputText("1")
+//            formula.text = addToInputText("1")
+            if (formula.text.toString().startsWith("0")){
+                str = formula.text.toString().replace("0", "") + "1"
+                expressionText(str)
+                showResult()
+            }else{
+                str = formula.text.toString() + "1"
+                expressionText(str)
+                showResult()
+            }
         }
         btnTwo.setOnClickListener {
-            formula.text = addToInputText("2")
+//            formula.text = addToInputText("2")
+            if (formula.text.toString().startsWith("0")){
+                str = formula.text.toString().replace("0", "") + "2"
+                expressionText(str)
+                showResult()
+            }else{
+                str = formula.text.toString() + "2"
+                expressionText(str)
+                showResult()
+            }
         }
         btnThree.setOnClickListener {
-            formula.text = addToInputText("3")
+//            formula.text = addToInputText("3")
+            if (formula.text.toString().startsWith("0")){
+                str = formula.text.toString().replace("0", "") + "3"
+                expressionText(str)
+                showResult()
+            }else{
+                str = formula.text.toString() + "3"
+                expressionText(str)
+                showResult()
+            }
         }
         btnFour.setOnClickListener {
-            formula.text = addToInputText("4")
+//            formula.text = addToInputText("4")
+            if (formula.text.toString().startsWith("0")){
+                str = formula.text.toString().replace("0", "") + "4"
+                expressionText(str)
+                showResult()
+            }else{
+                str = formula.text.toString() + "4"
+                expressionText(str)
+                showResult()
+            }
         }
         btnFive.setOnClickListener {
-            formula.text = addToInputText("5")
+//            formula.text = addToInputText("5")
+            if (formula.text.toString().startsWith("0")){
+                str = formula.text.toString().replace("0", "") + "5"
+                expressionText(str)
+                showResult()
+            }else{
+                str = formula.text.toString() + "5"
+                expressionText(str)
+                showResult()
+            }
         }
         btnSix.setOnClickListener {
-            formula.text = addToInputText("6")
+//            formula.text = addToInputText("6")
+            if (formula.text.toString().startsWith("0")){
+                str = formula.text.toString().replace("0", "") + "6"
+                expressionText(str)
+                showResult()
+            }else{
+                str = formula.text.toString() + "6"
+                expressionText(str)
+                showResult()
+            }
         }
         btnSeven.setOnClickListener {
-            formula.text = addToInputText("7")
+//            formula.text = addToInputText("7")
+            if (formula.text.toString().startsWith("0")){
+                str = formula.text.toString().replace("0", "") + "7"
+                expressionText(str)
+                showResult()
+            }else{
+                str = formula.text.toString() + "7"
+                expressionText(str)
+                showResult()
+            }
         }
         btnEight.setOnClickListener {
-            formula.text = addToInputText("8")
+//            formula.text = addToInputText("8")
+            if (formula.text.toString().startsWith("0")){
+                str = formula.text.toString().replace("0", "") + "8"
+                expressionText(str)
+                showResult()
+            }else{
+                str = formula.text.toString() + "8"
+                expressionText(str)
+                showResult()
+            }
         }
         btnNine.setOnClickListener {
-            formula.text = addToInputText("9")
+//            formula.text = addToInputText("9")
+            if (formula.text.toString().startsWith("0")){
+                str = formula.text.toString().replace("0", "") + "9"
+                expressionText(str)
+                showResult()
+            }else{
+                str = formula.text.toString() + "9"
+                expressionText(str)
+                showResult()
+            }
         }
         btnZero.setOnClickListener {
-            formula.text = addToInputText("0")
+//            formula.text = addToInputText("0")
+        if (formula.text.toString().startsWith("0")){
+            str = formula.text.toString().replace("0", "") + "0"
+            expressionText(str)
+            showResult()
+        }else{
+            str = formula.text.toString() + "0"
+            expressionText(str)
+            showResult()
         }
+
+        }
+
         btnDoubleZero.setOnClickListener {
-            formula.text = addToInputText("00")
+//            formula.text = addToInputText("00")
+            if (formula.text.toString().startsWith("0")){
+                str = formula.text.toString().replace("0", "") + "00"
+                expressionText(str)
+                showResult()
+            }else{
+                str = formula.text.toString() + "00"
+                expressionText(str)
+                showResult()
+            }
         }
+
         btnPlus.setOnClickListener {
-            formula.text = addToInputText("+")
+//            formula.text = addToInputText("+")
+            if(formula.text.toString().endsWith("%")||formula.text.toString().endsWith("/")||formula.text.toString().endsWith("*")||formula.text.toString().endsWith("+")||formula.text.toString().endsWith("-")||formula.text.toString().endsWith(".")){
+                str = formula.text.toString()
+                expressionText(str)
+            }else   {
+                str = formula.text.toString() + "+"
+                expressionText(str)
+            }
         }
         btnMinus.setOnClickListener {
-            formula.text = addToInputText("-")
+//            formula.text = addToInputText("-")
+            if(formula.text.toString().endsWith("%")||formula.text.toString().endsWith("/")||formula.text.toString().endsWith("*")||formula.text.toString().endsWith("+")||formula.text.toString().endsWith("-")||formula.text.toString().endsWith(".")){
+                str = formula.text.toString()
+                expressionText(str)
+            }else   {
+                str = formula.text.toString() + "-"
+                expressionText(str)
+            }
         }
         btnMultiply.setOnClickListener {
-            formula.text = addToInputText("X")
+//            formula.text = addToInputText("×")
+            if(formula.text.toString().endsWith("%")||formula.text.toString().endsWith("/")||formula.text.toString().endsWith("*")||formula.text.toString().endsWith("+")||formula.text.toString().endsWith("-")||formula.text.toString().endsWith(".")){
+                str = formula.text.toString()
+                expressionText(str)
+            }else   {
+                str = formula.text.toString() + "*"
+                expressionText(str)
+            }
         }
         btnDivide.setOnClickListener {
-            formula.text = addToInputText("/")
+//            formula.text = addToInputText("/")
+            if(formula.text.toString().endsWith("%")||formula.text.toString().endsWith("/")||formula.text.toString().endsWith("*")||formula.text.toString().endsWith("+")||formula.text.toString().endsWith("-")||formula.text.toString().endsWith(".")){
+                str = formula.text.toString()
+                expressionText(str)
+            }else   {
+                str = formula.text.toString() + "/"
+                expressionText(str)
+            }
+        }
+        btnDot.setOnClickListener {
+//            formula.text = addToInputText(".")
+            if(formula.text.toString().endsWith("%")||formula.text.toString().endsWith("/")||formula.text.toString().endsWith("*")||formula.text.toString().endsWith("+")||formula.text.toString().endsWith("-")||formula.text.toString().endsWith(".")){
+                str = formula.text.toString()
+                expressionText(str)
+            }else   {
+                str = formula.text.toString() + "."
+                expressionText(str)
+            }
         }
         btnHistory.setOnClickListener {
 
@@ -169,15 +326,17 @@ class MainActivity : AppCompatActivity() {
         }
         btnPercentage.setOnClickListener {
 
-            formula.text = addToInputText("%")
+//            formula.text = addToInputText("%")
 
-//            if(formula.text.toString().endsWith("%")||formula.text.toString().endsWith("/")||formula.text.toString().endsWith("*")||formula.text.toString().endsWith("+")||formula.text.toString().endsWith("-")||formula.text.toString().endsWith(".")){
-//                str = formula.text.toString()
-//                expressionText(str)
-//            }else   {
-//                str = formula.text.toString() + "%"
-//                expressionText(str)
-//            }
+            if(formula.text.toString().endsWith("%")||formula.text.toString().endsWith("/")||formula.text.toString().endsWith("*")||formula.text.toString().endsWith("+")||formula.text.toString().endsWith("-")||formula.text.toString().endsWith(".")){
+                str = formula.text.toString()
+                expressionText(str)
+            }else   {
+                str = formula.text.toString() + "%"
+                expressionText(str)
+            }
+
+
         }
         btnBackspace.setOnClickListener {
             if (formula.text.toString().isNotEmpty()){
@@ -237,44 +396,61 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    //Blurring the background
+
+
+     private fun expressionText(str: String){
+         formula.text = str
+     }
 
 
 
 
-    private fun addToInputText(buttonValue: String): String{
-        return "${formula.text}$buttonValue"
-    }
+//    private fun addToInputText(buttonValue: String): String{
+//        return "${formula.text}$buttonValue"
+//    }
 
 
     private fun getInputExpression(): String {
-        return formula.text.replace(Regex("X"), "*")
+        return formula.text.replace(Regex("×"), "*")
     }
 
-
-    private fun expressionText(str:String){
-        formula.text = str
-    }
 
     private fun showResult() {
 
+
+        val exp = formula.text.toString()
+
         try {
-            val expression = getInputExpression()
-            val result = Expression(expression).calculate()
-            if (result.isNaN()){
-                //show error message
-                output.text = "Error"
-//
-            }else{
-                //show Result
-                output.text = DecimalFormat("0.######").format(result).toString()
-//
+            val expression = ExpressionBuilder(exp).build()
+            val result = expression.evaluate()
+            val formattedResult = if (result % 1 == 0.0) {
+                result.toLong().toString()
+            } else {
+                result.toString()
             }
-        }catch (_: Exception){
-            //show error message
-            output.text = "Error"
-//
+            output.text = "$formattedResult"
+        } catch (e: Exception) {
+            formula.text = formula.text.toString()
+            output.text = formula.text.toString()
         }
+
+//        try {
+//            val expression = getInputExpression()
+//            val result = Expression(expression).calculate()
+//            if (result.isNaN()){
+//                //show error message
+//                output.text = "Error"
+////
+//            }else{
+//                //show Result
+//                output.text = DecimalFormat("0.######").format(result).toString()
+////
+//            }
+//        }catch (_: Exception){
+//            //show error message
+//            output.text = "Error"
+////
+//        }
 
     }
     

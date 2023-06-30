@@ -10,9 +10,9 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/bg1"
         android:id="@+id/backgroundImage"
         android:scaleType="centerCrop"
+        android:src="@drawable/bg1"
         tools:ignore="ContentDescription" />
 
 <!--        <RelativeLayout-->
@@ -35,6 +35,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
             android:elevation="0dp"
             android:src="@drawable/dot"
             app:backgroundTint="@android:color/transparent"
@@ -49,9 +51,11 @@
     <LinearLayout
         android:id="@+id/display"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="match_parent"
         android:layout_above="@+id/keypad"
-        android:layout_marginBottom="0dp"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:orientation="vertical"
         android:padding="@dimen/layoutPadding">
 
@@ -59,27 +63,30 @@
         <TextView
             android:id="@+id/formula"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/textViewHeight"
+            android:layout_height="wrap_content"
+            android:background="@drawable/formulagradient"
             android:fontFamily="@font/kanitlight"
             android:gravity="end|center"
+            android:layout_weight="1"
             android:padding="@dimen/textPadding"
             android:scrollHorizontally="true"
             android:text="@string/formula"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/formulaTextSize"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/output"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/textViewHeight"
+            android:layout_height="wrap_content"
+            android:background="@drawable/resultgradient"
             android:fontFamily="@font/kanitlight"
             android:gravity="end|center"
             android:padding="@dimen/textPadding"
+            android:layout_weight="1"
             android:scrollHorizontally="true"
-
             android:text="@string/result"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/resultTextSize" />
     </LinearLayout>
 

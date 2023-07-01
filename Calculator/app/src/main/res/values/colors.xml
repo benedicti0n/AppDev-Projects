@@ -2,4 +2,27 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="app_icon_background_color">#4684E3</color>
+
+    <color name="calculation_error_color">#F44B3F</color>
+
+    <!-- Normal Theme -->
+    <color name="foreground_color">#EFEFEF</color>
+    <color name="background_color">#fff</color>
+    <color name="popup_background_color">#fff</color>
+    <color name="history_background_color">#fff</color>
+    <color name="text_color">#000</color>
+    <color name="text_second_color">#595959</color>
+    <color name="text_third_color">#7E7E7E</color>
+    <color name="text_category_color">#595959</color>
+    <color name="button_color">#EFEFEF</color>
+    <color name="button_symbol_color">#B4D2E4</color>
+    <color name="button_clear_color">#B7DABD</color>
+    <color name="button_equals_color">#DCB5C5</color>
+    <color name="button_ripple_color">#C3C3C3</color>
+    <color name="switch_primary_color">#B4D2E4</color>
+    <color name="switch_on_primary_color">#FFFFFF</color>
+    <color name="switch_surface_variant_color">#636363</color>
+
 </resources>

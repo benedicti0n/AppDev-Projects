@@ -10,4 +10,18 @@
     <dimen name="buttonTextSize">10sp</dimen>
     <dimen name="buttonMarginEnd">10dp</dimen>
 
+
+
+
+    <dimen name="button_horizontal_margin">5dp</dimen>
+    <dimen name="button_vertical_margin">7dp</dimen>
+
+    <item name="about_text" type="dimen">17sp</item>
+
+    <dimen name="calculator_button_text_size">28sp</dimen>
+    <dimen name="calculator_button_function_text_size">24sp</dimen>
+
+    <item name="icon_scale" type="dimen" format="float">0.7</item>
+    <item name="icon_translate" type="dimen" format="float">3.5</item>
+
 </resources>

@@ -18,7 +18,6 @@
 
 
     <HorizontalScrollView
-        android:id="@+id/inputHorizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:overScrollMode="never"
@@ -27,8 +26,8 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline1"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="@dimen/layoutPadding"
-        android:layout_marginStart="@dimen/layoutPadding"
-        android:layout_marginEnd="@dimen/layoutPadding">
+        android:layout_marginStart="@dimen/keypadPadding"
+        android:layout_marginEnd="@dimen/keypadPadding">
 
         <EditText
             android:id="@+id/formula"
@@ -45,7 +44,7 @@
             android:text="@string/formula"
             android:textAlignment="textEnd"
             android:textColor="@color/white"
-            android:textSize="@dimen/formulaTextSize"
+            android:textSize="55sp"
             tools:ignore="LabelFor" />
 
     </HorizontalScrollView>
@@ -59,8 +58,8 @@
         android:fillViewport="true"
         android:overScrollMode="never"
         android:scrollbars="none"
-        android:layout_marginStart="@dimen/layoutPadding"
-        android:layout_marginEnd="@dimen/layoutPadding"
+        android:layout_marginStart="@dimen/keypadPadding"
+        android:layout_marginEnd="@dimen/keypadPadding"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline1">
 
@@ -84,7 +83,7 @@
                 android:textAlignment="textEnd"
                 android:textColor="@color/white"
                 android:textIsSelectable="true"
-                android:textSize="@dimen/resultTextSize" />
+                android:textSize="35sp" />
 
         </LinearLayout>
 
@@ -112,7 +111,9 @@
                 android:id="@+id/tableLayout"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:padding="@dimen/keypadPadding"
+                android:paddingHorizontal="8dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -120,21 +121,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="0dp"
-                    android:layout_weight="0"
-                    android:padding="@dimen/keypadPadding">
+                    android:layout_weight="0">
 
                     <Button
                         android:id="@+id/squareButton"
                         android:background="@drawable/gradient"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
+                        android:layout_margin="0dp"
                         android:layout_weight="1"
                         android:onClick="squareButton"
                         android:text="@string/square"
                         android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"
-                        />
+                        android:autoSizeTextType="uniform"/>
 
                     <Button
                         android:id="@+id/piButton"
@@ -143,7 +142,7 @@
                         android:textColor="@color/white"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
+                        android:layout_margin="0dp"
                         android:layout_weight="1"
                         android:onClick="piButton"
                         android:text="@string/pi"
@@ -154,7 +153,7 @@
                         android:id="@+id/exponentButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
+                        android:layout_margin="0dp"
                         android:layout_weight="1"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
@@ -168,7 +167,7 @@
                         android:id="@+id/factorialButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
+                        android:layout_margin="0dp"
                         android:layout_weight="1"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
@@ -201,14 +200,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:visibility="gone"
-                    tools:visibility="visible"
-                    android:padding="@dimen/keypadPadding">
+                    tools:visibility="visible">
 
                     <Button
                         android:id="@+id/degreeButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
+                        android:layout_margin="0dp"
                         android:layout_weight="1"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
@@ -222,7 +220,7 @@
                         android:id="@+id/sineButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
+                        android:layout_margin="0dp"
                         android:layout_weight="1"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
@@ -236,7 +234,7 @@
                         android:id="@+id/cosineButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
+                        android:layout_margin="0dp"
                         android:layout_weight="1"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
@@ -250,6 +248,7 @@
                         android:id="@+id/tangentButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:layout_margin="0dp"
                         android:layout_weight="1"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
@@ -269,14 +268,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:visibility="gone"
-                    tools:visibility="visible"
-                    android:padding="@dimen/keypadPadding">
+                    tools:visibility="visible">
 
                     <Button
                         android:id="@+id/invButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
+                        android:layout_margin="0dp"
                         android:layout_weight="1"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
@@ -284,14 +282,13 @@
                         android:onClick="invButton"
                         android:text="@string/invert"
                         android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"
-                        />
+                        android:autoSizeTextType="uniform"/>
 
                     <Button
                         android:id="@+id/eButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
+                        android:layout_margin="0dp"
                         android:layout_weight="1"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
@@ -305,7 +302,7 @@
                         android:id="@+id/naturalLogarithmButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
+                        android:layout_margin="0dp"
                         android:layout_weight="1"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
@@ -336,23 +333,19 @@
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:padding="@dimen/keypadPadding">
+                    android:layout_weight="3">
 
                     <Button
                         android:id="@+id/btnC"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="clearButton"
                         android:text="@string/c"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"
-                        />
+                        android:textSize="@dimen/buttonTextSize"/>
 
                     <Button
                         android:id="@+id/leftParenthesisButton"
@@ -385,28 +378,24 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="parenthesesButton"
                         android:text="@string/brackets"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize"/>
 
                     <Button
                         android:id="@+id/divideBy100Button"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="percent"
                         android:text="@string/percentage"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize"/>
 
                     <Button
                         android:id="@+id/btnDivide"
@@ -418,57 +407,49 @@
                         android:textColor="@color/white"
                         android:onClick="divideButton"
                         android:text="@string/divide"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize"/>
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:padding="@dimen/keypadPadding">
+                    android:layout_weight="3">
 
                     <Button
                         android:id="@+id/btnSeven"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/seven"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize"/>
 
                     <Button
                         android:id="@+id/btnEight"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/eight"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize"/>
 
                     <Button
                         android:id="@+id/btnNine"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/nine"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize"/>
 
                     <Button
                         android:id="@+id/btnMultiply"
@@ -480,57 +461,49 @@
                         android:textColor="@color/white"
                         android:onClick="multiplyButton"
                         android:text="@string/multiply"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize"/>
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:padding="@dimen/keypadPadding">
+                    android:layout_weight="3">
 
                     <Button
                         android:id="@+id/btnFour"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/four"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize"/>
 
                     <Button
                         android:id="@+id/btnFive"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/five"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize"/>
 
                     <Button
                         android:id="@+id/btnSix"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/six"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize"/>
 
                     <Button
                         android:id="@+id/btnMinus"
@@ -542,57 +515,49 @@
                         android:textColor="@color/white"
                         android:onClick="subtractButton"
                         android:text="@string/minus"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize"/>
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:padding="@dimen/keypadPadding">
+                    android:layout_weight="3">
 
                     <Button
                         android:id="@+id/btnOne"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/one"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize"/>
 
                     <Button
                         android:id="@+id/btnTwo"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/two"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize" />
 
                     <Button
                         android:id="@+id/btnThree"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/three"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize"/>
 
                     <Button
                         android:id="@+id/btnPlus"
@@ -603,29 +568,24 @@
                         android:text="@string/plus"
                         android:onClick="addButton"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize"/>
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:padding="@dimen/keypadPadding">
+                    android:layout_weight="3">
 
                     <Button
                         android:id="@+id/btnZero"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/zero"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"
-                        />
+                        android:textSize="@dimen/buttonTextSize" />
 
                     <Button
                         android:id="@+id/btnDot"
@@ -636,22 +596,18 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
-                        android:onClick="pointButton"
-                        android:autoSizeTextType="uniform"/>
+                        android:onClick="pointButton" />
 
                     <Button
                         android:id="@+id/btnBackspace"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="backspaceButton"
-                        android:text="@string/backspace"
-                        android:autoSizeTextType="uniform"/>
+                        android:text="@string/backspace"/>
 
                     <Button
                         android:id="@+id/btnEqual"
@@ -662,8 +618,7 @@
                         android:fontFamily="@font/kanitlight"
                         android:text="@string/equal"
                         android:onClick="equalsButton"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize"/>
                 </TableRow>
             </TableLayout>
 
@@ -709,14 +664,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="616dp" />
+        app:layout_constraintGuide_percent="0.18" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="520dp" />
+        app:layout_constraintGuide_percent="0.26" />
 
 
     <ImageButton
@@ -732,5 +687,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/degreeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/degreetextview"
+        android:textSize="25sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

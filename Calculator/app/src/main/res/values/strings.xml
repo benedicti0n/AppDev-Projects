@@ -1,34 +1,77 @@
 <resources>
     <string name="app_name">Calculator</string>
-    <string name="background_image">Background Image</string>
-    <string name="formula"> </string>
-    <string name="equal">=</string>
-    <string name="dot">.</string>
+
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
     <string name="zero">0</string>
     <string name="doubleZero">00</string>
+
+    <string name="background_image">Background Image</string>
+
+    <string name="formula"> </string>
+    <string name="result">0</string>
+
     <string name="plus">+</string>
-    <string name="three">3</string>
-    <string name="two">2</string>
-    <string name="one">1</string>
     <string name="minus">−</string>
-    <string name="six">6</string>
-    <string name="five">5</string>
-    <string name="four">4</string>
     <string name="multiply">×</string>
-    <string name="nine">9</string>
-    <string name="eight">8</string>
-    <string name="seven">7</string>
     <string name="divide">/</string>
+    <string name="equal">=</string>
+    <string name="dot">.</string>
+    <string name="percentage">%</string>
+    <string name="brackets">()</string>
     <string name="openingBracket">(</string>
     <string name="closingBracket">)</string>
+
     <string name="c">C</string>
-    <string name="result">0</string>
-    <string name="history">History</string>
-    <string name="scientific">s/c</string>
-    <string name="percentage">%</string>
     <string name="backspace">Del</string>
+
     <string name="bg_1">Gradient 1</string>
     <string name="bg_2">Gradient 2</string>
     <string name="bg_3">Gradient 3</string>
     <string name="bg_4">Set Custom Image</string>
+    <string name="degreetextview"> </string>
+
+    <string name="square" translatable="false">√</string>
+    <string name="squareInv" translatable="false">x²</string>
+    <string name="squareInvModuloVersion" translatable="false">#</string>
+    <string name="pi" translatable="false">π</string>
+    <string name="factorial" translatable="false">!</string>
+
+    <string name="degree" translatable="false">DEG</string>
+    <string name="radian" translatable="false">RAD</string>
+    <string name="invert" translatable="false">INV</string>
+
+    <string name="sine" translatable="false">sin</string>
+    <string name="sineInv" translatable="false">sin⁻¹</string>
+    <string name="cosine" translatable="false">cos</string>
+    <string name="cosineInv" translatable="false">cos⁻¹</string>
+    <string name="tangent" translatable="false">tan</string>
+    <string name="tangentInv" translatable="false">tan⁻¹</string>
+    <string name="e" translatable="false">e</string>
+    <string name="naturalLogarithm" translatable="false">ln</string>
+    <string name="naturalLogarithmInv" translatable="false">e^</string>
+    <string name="logarithm" translatable="false">log</string>
+    <string name="logarithmInv" translatable="false">10^</string>
+    <string name="exponent">^</string>
+
+
+
+    <!-- Error messages -->
+    <string name="division_by_0">Can\'t divide by 0</string>
+    <string name="domain_error">Domain error</string>
+    <string name="syntax_error">Syntax error</string>
+    <string name="value_too_large">Value too large</string>
+
+    <!-- Others -->
+    <string name="value_copied">Copied</string>
+    <string name="infinity">Infinity</string>
+    <string name="title_activity_settings" translatable="false">SettingsActivity</string>
+    <string name="clear_history">Clear History</string>
 </resources>

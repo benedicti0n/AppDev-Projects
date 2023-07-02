@@ -38,15 +38,15 @@
             android:autofillHints="false"
             android:inputType="textNoSuggestions"
             android:fontFamily="@font/kanitlight"
-            android:background="@android:color/transparent"
             android:maxLength="10000"
             android:paddingHorizontal="10dp"
             android:singleLine="true"
+            android:background="@android:color/transparent"
             android:text="@string/formula"
             android:textAlignment="textEnd"
             android:textColor="@color/white"
             android:textSize="@dimen/formulaTextSize"
-            tools:ignore="LabelFor" />
+            tools:ignore="RtlCompat" />
 
     </HorizontalScrollView>
 
@@ -77,11 +77,10 @@
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/kanitlight"
                 android:paddingHorizontal="10dp"
-                android:paddingBottom="4dp"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
                 android:text="@string/result"
-                android:textAlignment="textEnd"
+                android:gravity="center_vertical"
                 android:textColor="@color/white"
                 android:textIsSelectable="true"
                 android:textSize="@dimen/resultTextSize" />
@@ -121,7 +120,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="0dp"
                     android:layout_weight="0"
-                    android:padding="@dimen/keypadPadding">
+                    android:paddingRight="@dimen/keypadPadding"
+                    android:paddingLeft="@dimen/keypadPadding"
+                    android:paddingBottom="@dimen/keypadPadding">
 
                     <Button
                         android:id="@+id/squareButton"
@@ -200,7 +201,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:visibility="gone"
+
                     tools:visibility="visible"
                     android:padding="@dimen/keypadPadding">
 
@@ -692,8 +693,8 @@
                 android:id="@+id/sliding_layout_button"
                 android:layout_width="30dp"
                 android:layout_height="4dp"
-                android:layout_marginTop="24dp"
                 android:layout_marginBottom="15dp"
+                android:background="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -709,28 +710,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="616dp" />
+        app:layout_constraintGuide_percent="0.16" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="520dp" />
+        app:layout_constraintGuide_percent="0.3" />
 
 
     <ImageButton
         android:id="@+id/btnPopup"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
         android:background="@android:color/transparent"
         android:onClick="openAppMenu"
         android:scaleType="fitCenter"
         android:src="@drawable/threedot"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/degreeTextView"
+        style="@style/RobotoFontCondensedMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

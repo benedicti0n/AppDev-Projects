@@ -77,6 +77,7 @@ class MainActivity : AppCompatActivity() {
 
 
 //    private lateinit var view: View
+
     private val decimalSeparatorSymbol =
         DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     private val groupingSeparatorSymbol =
@@ -110,11 +111,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
 
-        setProfileImage()
+        setBackgroundImage()
 
 
         // Disable the keyboard on display EditText
-//        binding.formula.showSoftInputOnFocus = false
+        binding.formula.showSoftInputOnFocus = false
 
 
         binding.btnBackspace.setOnLongClickListener {
@@ -171,20 +172,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        // Prevent the phone from sleeping (if option enabled)
-        if (MyPreferences(this).preventPhoneFromSleepingMode) {
-            view.keepScreenOn = true
-        }
 
-        // scientific mode enabled by default (if option enabled)
-        if (MyPreferences(this).scientificMode) {
-            enableOrDisableScientistMode()
-        }
-
-        // use radians instead of degrees by default (if option enabled)
-        if (MyPreferences(this).useRadiansByDefault) {
-            toggleDegreeMode()
-        }
 
         // Focus by default
         binding.formula.requestFocus()
@@ -309,7 +297,7 @@ class MainActivity : AppCompatActivity() {
 
         //Popup Menu
         binding.btnPopup.setOnClickListener {
-            val popupMenu = PopupMenu(this, view)
+            val popupMenu = PopupMenu(this, binding.btnPopup)
             popupMenu.menuInflater.inflate(R.menu.example_menu, popupMenu.menu)
             popupMenu.setOnMenuItemClickListener { menuItem ->
                 // Handle menu item click events here
@@ -393,7 +381,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun setProfileImage() {
+    private fun setBackgroundImage() {
         val outputDir: File = getDir("images", Context.MODE_PRIVATE)
         val files: Array<File>? = outputDir.listFiles()
 
@@ -531,11 +519,11 @@ class MainActivity : AppCompatActivity() {
             }
             // Clear error color
             else {
-                binding.formula.setTextColor(ContextCompat.getColor(this, R.color.text_color))
+                binding.formula.setTextColor(ContextCompat.getColor(this, R.color.white))
                 binding.output.setTextColor(
                     ContextCompat.getColor(
                         this,
-                        R.color.text_second_color
+                        R.color.white
                     )
                 )
             }
@@ -694,15 +682,15 @@ class MainActivity : AppCompatActivity() {
         if (binding.scientistModeRow2.visibility != View.VISIBLE) {
             binding.scientistModeRow2.visibility = View.VISIBLE
             binding.scientistModeRow3.visibility = View.VISIBLE
-            binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
-            binding.degreeTextView!!.visibility = View.VISIBLE
-            binding.degreeTextView!!.text = binding.degreeButton.text.toString()
+            binding.scientistModeSwitchButton.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
+            binding.degreeTextView.visibility = View.VISIBLE
+            binding.degreeTextView.text = binding.degreeButton.text.toString()
         } else {
             binding.scientistModeRow2.visibility = View.GONE
             binding.scientistModeRow3.visibility = View.GONE
-            binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
-            binding.degreeTextView!!.visibility = View.GONE
-            binding.degreeTextView!!.text = binding.degreeButton.text.toString()
+            binding.scientistModeSwitchButton.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
+            binding.degreeTextView.visibility = View.GONE
+            binding.degreeTextView.text = binding.degreeButton.text.toString()
         }
     }
 
@@ -711,7 +699,7 @@ class MainActivity : AppCompatActivity() {
         if (isDegreeModeActivated) binding.degreeButton.text = getString(R.string.radian)
         else binding.degreeButton.text = getString(R.string.degree)
 
-        binding.degreeTextView!!.text = binding.degreeButton.text
+        binding.degreeTextView.text = binding.degreeButton.text
 
         // Flip the variable afterwards
         isDegreeModeActivated = !isDegreeModeActivated
@@ -808,6 +796,7 @@ class MainActivity : AppCompatActivity() {
         updateDisplay(view, (view as Button).text as String)
     }
 
+    @SuppressLint("SetTextI18n")
     private fun addSymbol(view: View, currentSymbol: String) {
         // Get input text length
         val textLength = binding.formula.text.length

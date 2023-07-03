@@ -26,6 +26,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.ContextThemeWrapper
 import android.view.HapticFeedbackConstants
 import android.view.View
 import android.view.accessibility.AccessibilityEvent
@@ -354,11 +355,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
-
-
-
-
     private fun launchImagePicker() {
         val intent = Intent(Intent.ACTION_GET_CONTENT)
         intent.type = "image/*"
@@ -395,7 +391,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun saveImageToStorageDrawable(imageResId: Int) {
-        val inputStream: InputStream? = resources.openRawResource(imageResId)
+        val inputStream: InputStream = resources.openRawResource(imageResId)
 
         try {
             val outputDir: File = getDir("images", Context.MODE_PRIVATE)
@@ -409,7 +405,7 @@ class MainActivity : AppCompatActivity() {
 
             val outputStream: OutputStream = FileOutputStream(outputFile)
 
-            inputStream?.use { input ->
+            inputStream.use { input ->
                 outputStream.use { output ->
                     input.copyTo(output) // Copy the input stream to the output stream
                 }
@@ -423,7 +419,7 @@ class MainActivity : AppCompatActivity() {
         } catch (e: Exception) {
             e.printStackTrace()
         } finally {
-            inputStream?.close()
+            inputStream.close()
         }
     }
 
@@ -541,7 +537,7 @@ class MainActivity : AppCompatActivity() {
                 binding.formula.setText("")
             } else {
                 binding.formula.setSelection(binding.formula.text.length)
-                binding.inputHorizontalScrollView!!.fullScroll(HorizontalScrollView.FOCUS_RIGHT)
+                binding.inputHorizontalScrollView.fullScroll(HorizontalScrollView.FOCUS_RIGHT)
             }
             isEqualLastAction = false
         }

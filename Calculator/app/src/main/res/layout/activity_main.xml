@@ -144,6 +144,7 @@
                         android:textColor="@color/white"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:textAllCaps="false"
                         android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:layout_weight="1"
                         android:onClick="piButton"
@@ -186,6 +187,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="0.6"
+                        android:backgroundTint="#46121212"
                         android:background="@drawable/circle"
                         android:onClick="scientistModeSwitchButton"
                         android:textAllCaps="false"
@@ -200,8 +202,8 @@
                     android:id="@+id/scientistModeRow2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-
+                    android:layout_weight="2"
+                    android:visibility="gone"
                     tools:visibility="visible"
                     android:padding="@dimen/keypadPadding">
 
@@ -213,11 +215,10 @@
                         android:layout_weight="1"
                         android:background="@drawable/gradient"
                         android:fontFamily="@font/kanitlight"
+                        android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:onClick="degreeButton"
-                        android:text="@string/degree"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:text="@string/degree" />
 
                     <Button
                         android:id="@+id/sineButton"
@@ -229,9 +230,7 @@
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="sineButton"
-                        android:text="@string/sine"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:text="@string/sine" />
 
                     <Button
                         android:id="@+id/cosineButton"
@@ -244,8 +243,7 @@
                         android:textColor="@color/white"
                         android:onClick="cosineButton"
                         android:text="@string/cosine"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        />
 
                     <Button
                         android:id="@+id/tangentButton"
@@ -256,9 +254,7 @@
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="tangentButton"
-                        android:text="@string/tangent"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:text="@string/tangent" />
 
 
 
@@ -268,7 +264,7 @@
                     android:id="@+id/scientistModeRow3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:visibility="gone"
                     tools:visibility="visible"
                     android:padding="@dimen/keypadPadding">
@@ -284,8 +280,6 @@
                         android:textColor="@color/white"
                         android:onClick="invButton"
                         android:text="@string/invert"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"
                         />
 
                     <Button
@@ -298,9 +292,7 @@
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="eButton"
-                        android:text="@string/e"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:text="@string/e" />
 
                     <Button
                         android:id="@+id/naturalLogarithmButton"
@@ -312,9 +304,7 @@
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="naturalLogarithmButton"
-                        android:text="@string/naturalLogarithm"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:text="@string/naturalLogarithm" />
 
                     <Button
                         android:id="@+id/logarithmButton"
@@ -326,9 +316,7 @@
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="logarithmButton"
-                        android:text="@string/logarithm"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:text="@string/logarithm" />
 
 
 
@@ -675,6 +663,7 @@
             android:id="@+id/constraintLayout3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/layoutPadding"
             tools:context=".MainActivity">
 
             <androidx.recyclerview.widget.RecyclerView
@@ -722,6 +711,7 @@
 
     <ImageButton
         android:id="@+id/btnPopup"
+        style="@style/RobotoFontCondensedMedium"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"

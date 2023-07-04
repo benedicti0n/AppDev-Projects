@@ -4,10 +4,8 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-
 import android.widget.Button
 import android.widget.PopupMenu
-
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.result.contract.ActivityResultContracts
@@ -26,7 +24,6 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.ContextThemeWrapper
 import android.view.HapticFeedbackConstants
 import android.view.View
 import android.view.accessibility.AccessibilityEvent
@@ -61,10 +58,13 @@ class MainActivity : AppCompatActivity() {
                 // Image Uri will not be null for RESULT_OK
                 val uri: Uri = data?.data!!
 
-                // Set the image to the ImageView
+                // Delete the old image, if any
+                deleteOldImage()
+
+                // Set the new image to the ImageView
                 binding.backgroundImage.setImageURI(uri)
 
-                // Save the image permanently
+                // Save the new image permanently
                 saveImageToStorage(uri)
             } else if (result.resultCode == ImagePicker.RESULT_ERROR) {
                 Toast.makeText(this, ImagePicker.getError(result.data), Toast.LENGTH_SHORT).show()
@@ -76,8 +76,6 @@ class MainActivity : AppCompatActivity() {
     private val WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 1
     private var savedImageUri: Uri? = null
 
-
-//    private lateinit var view: View
 
     private val decimalSeparatorSymbol =
         DecimalFormatSymbols.getInstance().decimalSeparator.toString()
@@ -95,9 +93,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var historyAdapter: HistoryAdapter
     private lateinit var historyLayoutMgr: LinearLayoutManager
 
-
-//    private lateinit var btnPopup: ImageButton
-//    private lateinit var backgroundImage: ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -232,31 +227,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 updateResultDisplay()
-                /*val afterTextLength = s?.length ?: 0
-                // If the afterTextLength is equals to 0 we have to clear resultDisplay
-                if (afterTextLength == 0) {
-                    binding.resultDisplay.setText("")
-                }
 
-                /* we check if the length of the text entered into the EditText
-                is greater than the length of the text before the change (beforeTextLength)
-                by more than 1 character. If it is, we assume that this is a paste event. */
-                val clipData = clipboardManager.primaryClip
-                if (clipData != null && clipData.itemCount > 0) {
-                    //val clipText = clipData.getItemAt(0).coerceToText(this@MainActivity).toString()
-
-                    if (s != null) {
-                        //val newValue = s.subSequence(start, start + count).toString()
-                        if (
-                            (afterTextLength - beforeTextLength > 1)
-                            // Removed to avoid anoying notification (https://developer.android.com/develop/ui/views/touch-and-input/copy-paste#PastingSystemNotifications)
-                            //|| (afterTextLength - beforeTextLength >= 1 && clipText == newValue) // Supports 1+ new caractere if it is equals to the latest element from the clipboard
-                        ) {
-                            // Handle paste event here
-                            updateResultDisplay()
-                        }
-                    }
-                }*/
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -266,34 +237,6 @@ class MainActivity : AppCompatActivity() {
 
 //        blurLayout = findViewById(R.id.blurLayout)
 //        BlurKit.init(this)
-
-//        val btnPopup = binding.btnPopup
-
-//        formula = findViewById(R.id.formula)
-//        output = findViewById(R.id.output)
-
-//        btnOne = findViewById(R.id.btnOne)
-//        btnTwo = findViewById(R.id.btnTwo)
-//        btnThree = findViewById(R.id.btnThree)
-//        btnFour = findViewById(R.id.btnFour)
-//        btnFive = findViewById(R.id.btnFive)
-//        btnSix = findViewById(R.id.btnSix)
-//        btnSeven = findViewById(R.id.btnSeven)
-//        btnEight = findViewById(R.id.btnEight)
-//        btnNine = findViewById(R.id.btnNine)
-//        btnZero = findViewById(R.id.btnZero)
-////        btnDoubleZero = findViewById(R.id.btnDoubleZero)
-//        btnPlus = findViewById(R.id.btnPlus)
-//        btnMinus = findViewById(R.id.btnMinus)
-//        btnDivide = findViewById(R.id.btnDivide)
-//        btnMultiply = findViewById(R.id.btnMultiply)
-//        btnEqual = findViewById(R.id.btnEqual)
-//        btnOpeningBracket = findViewById(R.id.leftParenthesisButton)
-//        btnClosingBracket = findViewById(R.id.rightParenthesisButton)
-//        btnC = findViewById(R.id.btnC)
-//        btnDot = findViewById(R.id.btnDot)
-//        btnPercentage = findViewById(R.id.divideBy100Button)
-//        btnBackspace = findViewById(R.id.btnBackspace)
 
 
         //Popup Menu
@@ -339,6 +282,12 @@ class MainActivity : AppCompatActivity() {
                         true
                     }
 
+                    R.id.madeBy -> {
+
+                        openWebPage("https://github.com/benedicti0n")
+                        true
+                    }
+
                     else -> false
                 }
             }
@@ -349,9 +298,6 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-
-
-
 
 
 
@@ -458,6 +404,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun deleteOldImage() {
+        val outputDir: File = getDir("images", Context.MODE_PRIVATE)
+        val fileName = "profile_image.jpg" // Fixed file name for the profile image
+        val outputFile = File(outputDir, fileName)
+
+        if (outputFile.exists()) {
+            outputFile.delete()
+        }
+    }
+
+
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -471,7 +428,7 @@ class MainActivity : AppCompatActivity() {
                 imagePickerLauncher.launch(intent)
             } else {
                 // Permission denied, show a message or handle accordingly
-                Toast.makeText(this, "Write permission denied", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -1231,22 +1188,17 @@ class MainActivity : AppCompatActivity() {
         enableOrDisableScientistMode()
     }
 
+
+
+
+
+    //To open the Github acc from menu item.
+    private fun openWebPage(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(intent)
+    }
+
+
 }
-
-//    private fun addToInputText(buttonValue: String): String{
-//        return "${formula.text}$buttonValue"
-//    }
-
-
-//
-//    override fun onStart() {
-//        super.onStart()
-//        blurLayout.startBlur()
-//    }
-//
-//    override fun onStop() {
-//        blurLayout.pauseBlur()
-//        super.onStop()
-//    }
 
 

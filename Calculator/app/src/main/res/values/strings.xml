@@ -74,4 +74,6 @@
     <string name="infinity">Infinity</string>
     <string name="title_activity_settings" translatable="false">SettingsActivity</string>
     <string name="clear_history">Clear History</string>
+    <string name="madeBy">Github: Benedicti0n</string>
+    <string name="give_a_follow_please">Give a follow please😇</string>
 </resources>

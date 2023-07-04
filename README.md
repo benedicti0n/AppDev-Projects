@@ -1,6 +1,6 @@
 <div align= "center">
 
-# App Dev Projects
+# 🤖App Dev Projects📱
 
 Welcome to my GitHub repository! This repository contains multiple projects for my learning. Each project is described below with its features, and contributions are welcome. Feel free to explore and contribute to any project that interests you.
 
@@ -25,7 +25,7 @@ Welcome to my GitHub repository! This repository contains multiple projects for 
 
 **📷 Screenshots**
 
-<img src="" width="15%"/>
+<img src="https://github.com/benedicti0n/AppDev-Projects/blob/main/src/ageCalculator.png" width="15%"/>
 
 Contributions are welcome.
 
@@ -47,7 +47,13 @@ Contributions are welcome.
 
 **📷 Screenshots**
 
-<img src="" width="15%"/>
+<div align= "left">
+
+<img src="https://github.com/benedicti0n/AppDev-Projects/blob/main/src/calcualtor-img1.png" width="15%"/>
+<img src="https://github.com/benedicti0n/AppDev-Projects/blob/main/src/calcualtor-img2.png" width="15%"/>
+<img src="https://github.com/benedicti0n/AppDev-Projects/blob/main/src/calcualtor-img3.png" width="15%"/>
+
+</div>
   
 ### Contributions are welcome.
 

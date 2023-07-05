@@ -1,4 +1,4 @@
-package com.example.calculator
+package dev.benediction.calculator
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.example.calculator
+package dev.benediction.calculator
 
 import java.math.BigInteger
 import kotlin.math.*

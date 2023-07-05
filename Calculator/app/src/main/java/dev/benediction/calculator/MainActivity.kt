@@ -1,4 +1,4 @@
-package com.example.calculator
+package dev.benediction.calculator
 
 import android.app.Activity
 import android.content.Intent
@@ -30,7 +30,8 @@ import android.view.accessibility.AccessibilityEvent
 import android.widget.HorizontalScrollView
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.calculator.databinding.ActivityMainBinding
+import dev.benediction.calculator.R
+import dev.benediction.calculator.databinding.ActivityMainBinding
 import com.sothree.slidinguppanel.PanelSlideListener
 import com.sothree.slidinguppanel.PanelState
 import kotlinx.coroutines.Dispatchers
@@ -255,15 +256,15 @@ class MainActivity : AppCompatActivity() {
 
                     R.id.bg2 -> {
 
-                        saveImageToStorageDrawable(R.drawable.bg3)
-                        binding.backgroundImage.setImageResource(R.drawable.bg3)
+                        saveImageToStorageDrawable(R.drawable.bg2)
+                        binding.backgroundImage.setImageResource(R.drawable.bg2)
                         true
                     }
                     // Add cases for other menu items as needed
                     R.id.bg3 -> {
 
-                        saveImageToStorageDrawable(R.drawable.bg2)
-                        binding.backgroundImage.setImageResource(R.drawable.bg2)
+                        saveImageToStorageDrawable(R.drawable.bg3)
+                        binding.backgroundImage.setImageResource(R.drawable.bg3)
                         true
                     }
 

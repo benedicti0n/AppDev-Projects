@@ -1,4 +1,4 @@
-package com.example.calculator
+package dev.benediction.calculator
 
 import android.content.Context
 import android.preference.PreferenceManager
@@ -42,7 +42,8 @@ class MyPreferences(context: Context) {
         set(value) = preferences.edit().putString(KEY_HISTORY_SIZE, value).apply()
     var numberPrecision = preferences.getString(KEY_NUMBER_PRECISION, "10")
         set(value) = preferences.edit().putString(KEY_NUMBER_PRECISION, value).apply()
-    var numberIntoScientificNotation = preferences.getBoolean(KEY_WRITE_NUMBER_INTO_SCIENTIC_NOTATION, false)
+    var numberIntoScientificNotation = preferences.getBoolean(
+        KEY_WRITE_NUMBER_INTO_SCIENTIC_NOTATION, false)
         set(value) = preferences.edit().putBoolean(KEY_WRITE_NUMBER_INTO_SCIENTIC_NOTATION, value).apply()
     var longClickToCopyValue = preferences.getBoolean(KEY_LONG_CLICK_TO_COPY_VALUE, true)
         set(value) = preferences.edit().putBoolean(KEY_LONG_CLICK_TO_COPY_VALUE, value).apply()

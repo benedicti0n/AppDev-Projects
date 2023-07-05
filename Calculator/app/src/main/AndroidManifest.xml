@@ -20,7 +20,7 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="dev.benediction.calculator.MainActivity"
             android:exported="true"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>

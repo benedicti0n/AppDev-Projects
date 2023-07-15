@@ -26,6 +26,8 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.HapticFeedbackConstants
 import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
 import android.widget.HorizontalScrollView
 import androidx.lifecycle.lifecycleScope
@@ -49,6 +51,8 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
 //    private lateinit var blurLayout: BlurLayout
+
+
 
 
     //    for set the custom background
@@ -98,6 +102,24 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Hide the status bar
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
+
+        // Hide the navigation bar
+        window.decorView.apply {
+            systemUiVisibility = (
+                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            or View.SYSTEM_UI_FLAG_IMMERSIVE
+                            or View.SYSTEM_UI_FLAG_FULLSCREEN
+                    )
+        }
+
+
         setContentView(R.layout.activity_main)
 
 
@@ -636,15 +658,15 @@ class MainActivity : AppCompatActivity() {
         if (binding.scientistModeRow2.visibility != View.VISIBLE) {
             binding.scientistModeRow2.visibility = View.VISIBLE
             binding.scientistModeRow3.visibility = View.VISIBLE
-            binding.scientistModeSwitchButton.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
-            binding.degreeTextView.visibility = View.VISIBLE
-            binding.degreeTextView.text = binding.degreeButton.text.toString()
+            binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
+            binding.degreeTextView?.visibility = View.VISIBLE
+            binding.degreeTextView?.text = binding.degreeButton.text.toString()
         } else {
             binding.scientistModeRow2.visibility = View.GONE
             binding.scientistModeRow3.visibility = View.GONE
-            binding.scientistModeSwitchButton.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
-            binding.degreeTextView.visibility = View.GONE
-            binding.degreeTextView.text = binding.degreeButton.text.toString()
+            binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
+            binding.degreeTextView?.visibility = View.GONE
+            binding.degreeTextView?.text = binding.degreeButton.text.toString()
         }
     }
 
@@ -653,7 +675,7 @@ class MainActivity : AppCompatActivity() {
         if (isDegreeModeActivated) binding.degreeButton.text = getString(R.string.radian)
         else binding.degreeButton.text = getString(R.string.degree)
 
-        binding.degreeTextView.text = binding.degreeButton.text
+        binding.degreeTextView?.text = binding.degreeButton.text
 
         // Flip the variable afterwards
         isDegreeModeActivated = !isDegreeModeActivated

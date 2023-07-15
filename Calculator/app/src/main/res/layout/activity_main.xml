@@ -202,7 +202,7 @@
                     android:id="@+id/scientistModeRow2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
+                    android:layout_weight="0"
                     android:visibility="gone"
                     tools:visibility="visible"
                     android:padding="@dimen/keypadPadding">
@@ -218,7 +218,8 @@
                         android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:onClick="degreeButton"
-                        android:text="@string/degree" />
+                        android:text="@string/degree"
+                        />
 
                     <Button
                         android:id="@+id/sineButton"
@@ -230,7 +231,8 @@
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="sineButton"
-                        android:text="@string/sine" />
+                        android:text="@string/sine"
+                        />
 
                     <Button
                         android:id="@+id/cosineButton"
@@ -264,7 +266,7 @@
                     android:id="@+id/scientistModeRow3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
+                    android:layout_weight="0"
                     android:visibility="gone"
                     tools:visibility="visible"
                     android:padding="@dimen/keypadPadding">
@@ -279,8 +281,7 @@
                         android:fontFamily="@font/kanitlight"
                         android:textColor="@color/white"
                         android:onClick="invButton"
-                        android:text="@string/invert"
-                        />
+                        android:text="@string/invert" />
 
                     <Button
                         android:id="@+id/eButton"
@@ -700,14 +701,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.16" />
+        app:layout_constraintGuide_percent="0.18" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
+        app:layout_constraintGuide_percent="0.33" />
 
 
     <ImageButton

@@ -111,88 +111,68 @@
                 android:id="@+id/tableLayout"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:padding="@dimen/keypadPadding"
+                android:paddingHorizontal="8dp"
+                android:paddingTop="1dp"
+                android:paddingBottom="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="0dp"
-                    android:layout_weight="0"
-                    android:paddingRight="@dimen/keypadPadding"
-                    android:paddingLeft="@dimen/keypadPadding"
-                    android:paddingBottom="@dimen/keypadPadding">
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="0">
 
                     <Button
                         android:id="@+id/squareButton"
-                        android:background="@drawable/gradient"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:layout_weight="1"
                         android:onClick="squareButton"
                         android:text="@string/square"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"
-                        />
+                        android:textSize="@dimen/buttonTextSize" />
 
                     <Button
                         android:id="@+id/piButton"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:textAllCaps="false"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:layout_weight="1"
                         android:onClick="piButton"
                         android:text="@string/pi"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/buttonTextSize" />
 
                     <Button
                         android:id="@+id/exponentButton"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
                         android:onClick="exponentButton"
                         android:text="@string/exponent"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize" />
 
                     <Button
                         android:id="@+id/factorialButton"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
                         android:onClick="factorialButton"
                         android:text="@string/factorial"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize" />
 
                     <ImageButton
                         android:id="@+id/scientistModeSwitchButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_margin="0dp"
+                        android:layout_margin="7dp"
                         android:layout_weight="0.6"
-                        android:backgroundTint="#46121212"
-                        android:background="@drawable/circle"
                         android:onClick="scientistModeSwitchButton"
                         android:textAllCaps="false"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
                         android:textSize="26sp"
                         app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
 
@@ -202,59 +182,51 @@
                     android:id="@+id/scientistModeRow2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"
+                    android:layout_weight="1"
                     android:visibility="gone"
-                    tools:visibility="visible"
-                    android:padding="@dimen/keypadPadding">
+                    tools:visibility="visible">
 
                     <Button
                         android:id="@+id/degreeButton"
+                        style="@style/CalculatorButton.Function"
+                        android:textSize="@dimen/buttonTextSizeScientific"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
                         android:textAllCaps="false"
-                        android:textColor="@color/white"
                         android:onClick="degreeButton"
                         android:text="@string/degree"
                         />
 
                     <Button
                         android:id="@+id/sineButton"
+                        style="@style/CalculatorButton.Function"
+                        android:textSize="@dimen/buttonTextSizeScientific"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
                         android:onClick="sineButton"
                         android:text="@string/sine"
                         />
 
                     <Button
                         android:id="@+id/cosineButton"
+                        style="@style/CalculatorButton.Function"
+                        android:textSize="@dimen/buttonTextSizeScientific"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
                         android:onClick="cosineButton"
                         android:text="@string/cosine"
                         />
 
                     <Button
                         android:id="@+id/tangentButton"
+                        style="@style/CalculatorButton.Function"
+                        android:textSize="@dimen/buttonTextSizeScientific"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
                         android:onClick="tangentButton"
                         android:text="@string/tangent" />
 
@@ -266,92 +238,73 @@
                     android:id="@+id/scientistModeRow3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"
+                    android:layout_weight="1"
                     android:visibility="gone"
-                    tools:visibility="visible"
-                    android:padding="@dimen/keypadPadding">
+                    tools:visibility="visible">
 
                     <Button
                         android:id="@+id/invButton"
+                        style="@style/CalculatorButton.Function"
+                        android:textSize="@dimen/buttonTextSizeScientific"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
                         android:onClick="invButton"
                         android:text="@string/invert" />
 
                     <Button
                         android:id="@+id/eButton"
+                        style="@style/CalculatorButton.Function"
+                        android:textSize="@dimen/buttonTextSizeScientific"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
                         android:onClick="eButton"
                         android:text="@string/e" />
 
                     <Button
                         android:id="@+id/naturalLogarithmButton"
+                        style="@style/CalculatorButton.Function"
+                        android:textSize="@dimen/buttonTextSizeScientific"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
                         android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
                         android:onClick="naturalLogarithmButton"
                         android:text="@string/naturalLogarithm" />
 
                     <Button
                         android:id="@+id/logarithmButton"
+                        style="@style/CalculatorButton.Function"
+                        android:textSize="@dimen/buttonTextSizeScientific"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
                         android:onClick="logarithmButton"
                         android:text="@string/logarithm" />
-
-
 
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:padding="@dimen/keypadPadding">
+                    android:layout_weight="3">
 
                     <Button
                         android:id="@+id/btnC"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
+                        style="@style/CalculatorButton"
                         android:onClick="clearButton"
                         android:text="@string/c"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"
-                        />
+                        android:textSize="@dimen/buttonTextSize" />
 
                     <Button
                         android:id="@+id/leftParenthesisButton"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
                         android:onClick="leftParenthesisButton"
                         android:text="@string/openingBracket"
                         android:textSize="@dimen/buttonTextSize"
@@ -359,12 +312,10 @@
 
                     <Button
                         android:id="@+id/rightParenthesisButton"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
                         android:onClick="rightParenthesisButton"
                         android:text="@string/closingBracket"
                         android:textSize="@dimen/buttonTextSize"
@@ -372,273 +323,213 @@
 
                     <Button
                         android:id="@+id/parenthesesButton"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
                         android:onClick="parenthesesButton"
                         android:text="@string/brackets"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize" />
 
                     <Button
                         android:id="@+id/divideBy100Button"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
                         android:onClick="percent"
                         android:text="@string/percentage"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        android:textSize="@dimen/buttonTextSize"/>
 
                     <Button
                         android:id="@+id/btnDivide"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
                         android:onClick="divideButton"
                         android:text="@string/divide"
+                        android:textSize="@dimen/buttonTextSize"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+                    <Button
+                        android:id="@+id/btnSeven"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="keyDigitPadMappingToDisplay"
+                        android:text="@string/seven"
+                        android:textSize="@dimen/buttonTextSize"/>
+
+                    <Button
+                        android:id="@+id/btnEight"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="keyDigitPadMappingToDisplay"
+                        android:text="@string/eight"
+                        android:textSize="@dimen/buttonTextSize"/>
+
+                    <Button
+                        android:id="@+id/btnNine"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="keyDigitPadMappingToDisplay"
+                        android:text="@string/nine"
                         android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        />
+
+                    <Button
+                        android:id="@+id/btnMultiply"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="multiplyButton"
+                        android:text="@string/multiply"
+                        android:textSize="@dimen/buttonTextSize"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+                    <Button
+                        android:id="@+id/btnFour"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="keyDigitPadMappingToDisplay"
+                        android:text="@string/four"
+                        android:textSize="@dimen/buttonTextSize" />
+
+                    <Button
+                        android:id="@+id/btnFive"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="keyDigitPadMappingToDisplay"
+                        android:text="@string/five"
+                        android:textSize="@dimen/buttonTextSize" />
+
+                    <Button
+                        android:id="@+id/btnSix"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="keyDigitPadMappingToDisplay"
+                        android:text="@string/six"
+                        android:textSize="@dimen/buttonTextSize"
+                        />
+
+                    <Button
+                        android:id="@+id/btnMinus"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="subtractButton"
+                        android:text="@string/minus"
+                        android:textSize="@dimen/buttonTextSize" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+                    <Button
+                        android:id="@+id/btnOne"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="keyDigitPadMappingToDisplay"
+                        android:text="@string/one"
+                        android:textSize="@dimen/buttonTextSize"/>
+
+                    <Button
+                        android:id="@+id/btnTwo"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="keyDigitPadMappingToDisplay"
+                        android:text="@string/two"
+                        android:textSize="@dimen/buttonTextSize" />
+
+                    <Button
+                        android:id="@+id/btnThree"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="keyDigitPadMappingToDisplay"
+                        android:text="@string/three"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/buttonTextSize" />
+
+                    <Button
+                        android:id="@+id/btnPlus"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="addButton"
+                        android:text="@string/plus"
+                        android:textSize="@dimen/buttonTextSize"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:padding="@dimen/keypadPadding">
-
-                    <Button
-                        android:id="@+id/btnSeven"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
-                        android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/seven"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
-
-                    <Button
-                        android:id="@+id/btnEight"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
-                        android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/eight"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
-
-                    <Button
-                        android:id="@+id/btnNine"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
-                        android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/nine"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
-
-                    <Button
-                        android:id="@+id/btnMultiply"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
-                        android:onClick="multiplyButton"
-                        android:text="@string/multiply"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:padding="@dimen/keypadPadding">
-
-                    <Button
-                        android:id="@+id/btnFour"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
-                        android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/four"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
-
-                    <Button
-                        android:id="@+id/btnFive"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
-                        android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/five"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
-
-                    <Button
-                        android:id="@+id/btnSix"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
-                        android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/six"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
-
-                    <Button
-                        android:id="@+id/btnMinus"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
-                        android:onClick="subtractButton"
-                        android:text="@string/minus"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:padding="@dimen/keypadPadding">
-
-                    <Button
-                        android:id="@+id/btnOne"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
-                        android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/one"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
-
-                    <Button
-                        android:id="@+id/btnTwo"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
-                        android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/two"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
-
-                    <Button
-                        android:id="@+id/btnThree"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
-                        android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/three"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
-
-                    <Button
-                        android:id="@+id/btnPlus"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:text="@string/plus"
-                        android:onClick="addButton"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:padding="@dimen/keypadPadding">
+                    >
 
                     <Button
                         android:id="@+id/btnZero"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/zero"
                         android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"
                         />
 
                     <Button
                         android:id="@+id/btnDot"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
+                        style="@style/CalculatorButton"
                         android:text="@string/dot"
+                        android:textSize="@dimen/buttonTextSize"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
-                        android:onClick="pointButton"
-                        android:autoSizeTextType="uniform"/>
+                        android:onClick="pointButton" />
 
                     <Button
                         android:id="@+id/btnBackspace"
+                        style="@style/CalculatorButton"
+                        android:textSize="@dimen/buttonTextSizeScientific"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/buttonMarginEnd"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
-                        android:textColor="@color/white"
                         android:onClick="backspaceButton"
                         android:text="@string/backspace"
                         />
@@ -646,15 +537,14 @@
 
                     <Button
                         android:id="@+id/btnEqual"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:fontFamily="@font/kanitlight"
                         android:text="@string/equal"
                         android:onClick="equalsButton"
                         android:textSize="@dimen/buttonTextSize"
-                        android:autoSizeTextType="uniform"/>
+                        />
                 </TableRow>
             </TableLayout>
 

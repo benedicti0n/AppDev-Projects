@@ -24,6 +24,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.View
 import android.view.Window
@@ -32,7 +33,6 @@ import android.view.accessibility.AccessibilityEvent
 import android.widget.HorizontalScrollView
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import dev.benediction.calculator.R
 import dev.benediction.calculator.databinding.ActivityMainBinding
 import com.sothree.slidinguppanel.PanelSlideListener
 import com.sothree.slidinguppanel.PanelState
@@ -49,6 +49,7 @@ import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
+    
 
 //    private lateinit var blurLayout: BlurLayout
 
@@ -58,7 +59,7 @@ class MainActivity : AppCompatActivity() {
     //    for set the custom background
     private val imagePickerLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
+            if (result.resultCode == RESULT_OK) {
                 val data: Intent? = result.data
                 // Image Uri will not be null for RESULT_OK
                 val uri: Uri = data?.data!!
@@ -78,7 +79,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-    private val WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 1
+    private val WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 101
     private var savedImageUri: Uri? = null
 
 
@@ -329,25 +330,36 @@ class MainActivity : AppCompatActivity() {
         intent.type = "image/*"
         intent.putExtra(Intent.EXTRA_MIME_TYPES, arrayOf("image/jpeg", "image/png"))
 
+        // Check if permission is granted
         if (ContextCompat.checkSelfPermission(
                 this,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
             ) == PackageManager.PERMISSION_GRANTED
         ) {
-            imagePickerLauncher.launch(intent)
+            imagePickerLauncher.launch(intent) // Permission is already granted, launch the image picker
         } else {
-            ActivityCompat.requestPermissions(
-                this,
-                arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                WRITE_EXTERNAL_STORAGE_REQUEST_CODE
-            )
+            // Permission is not granted, request the permission
+            // You can check if the user previously denied the permission and provide an explanation if necessary
+            if (ActivityCompat.shouldShowRequestPermissionRationale(
+                    this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+                )
+            ) {
+                // Show an explanation to the user why the permission is needed (Optional)
+                // You can display a dialog explaining the need for this permission
+            } else {
+                // No explanation needed, request the permission
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                    WRITE_EXTERNAL_STORAGE_REQUEST_CODE
+                )
+            }
         }
-
-
     }
 
     private fun setBackgroundImage() {
-        val outputDir: File = getDir("images", Context.MODE_PRIVATE)
+        val outputDir: File = getDir("images", MODE_PRIVATE)
         val files: Array<File>? = outputDir.listFiles()
 
         if (files != null && files.isNotEmpty()) {
@@ -363,7 +375,7 @@ class MainActivity : AppCompatActivity() {
         val inputStream: InputStream = resources.openRawResource(imageResId)
 
         try {
-            val outputDir: File = getDir("images", Context.MODE_PRIVATE)
+            val outputDir: File = getDir("images", MODE_PRIVATE)
             val fileName = "profile_image.jpg" // Fixed file name for the profile image
             val outputFile = File(outputDir, fileName)
 
@@ -397,7 +409,7 @@ class MainActivity : AppCompatActivity() {
         val inputStream: InputStream? = contentResolver.openInputStream(uri)
 
         try {
-            val outputDir: File = getDir("images", Context.MODE_PRIVATE)
+            val outputDir: File = getDir("images", MODE_PRIVATE)
             val fileName = "profile_image.jpg" // Fixed file name for the profile image
             val outputFile = File(outputDir, fileName)
 
@@ -428,7 +440,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun deleteOldImage() {
-        val outputDir: File = getDir("images", Context.MODE_PRIVATE)
+        val outputDir: File = getDir("images", MODE_PRIVATE)
         val fileName = "profile_image.jpg" // Fixed file name for the profile image
         val outputFile = File(outputDir, fileName)
 
@@ -441,7 +453,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
-        permissions: Array<out String>,
+        permissions: Array<String>,
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
@@ -450,14 +462,11 @@ class MainActivity : AppCompatActivity() {
                 // Permission granted, launch the image picker
                 imagePickerLauncher.launch(intent)
             } else {
-                // Permission denied, show a message or handle accordingly
-                Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
+                // Permission denied, handle the denied case, if needed
+                // You can show a message or disable functionality that requires this permission
             }
         }
     }
-
-
-
 
 
     fun clearHistory() {

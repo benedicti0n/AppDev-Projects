@@ -5,7 +5,7 @@
 
     <color name="app_icon_background_color">#4684E3</color>
 
-    <color name="calculation_error_color">#F44B3F</color>
+    <color name="calculation_error_color">#EA6A61</color>
 
     <!-- Normal Theme -->
     <color name="foreground_color">#EFEFEF</color>

@@ -18,6 +18,4 @@
     <item
         android:id="@+id/madeBy"
         android:title="@string/madeBy" />
-    <item
-        android:title="@string/give_a_follow_please"/>
 </menu>
